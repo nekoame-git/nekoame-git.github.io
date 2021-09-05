@@ -104,11 +104,11 @@ div.timenode:hover .meta {
 }
 
 div.timenode:hover .meta:before {
-    background: rgba(255, 87, 34, 0.5);
+    background: rgba(41, 17, 10, 0.178);
 }
 
 div.timenode:hover .meta:after {
-    background: #ff56220e;
+    background: #3b3b3bda;
     transform: scale(1);
 }
 
