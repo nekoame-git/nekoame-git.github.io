@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="复合选择器笔记（思维导图）, 233333">
+    <meta name="keywords" content="233333">
     <meta name="description" content="Blog学习分享">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>复合选择器笔记（思维导图） | 隐微のBlog</title>
+    <title>隐微のBlog</title>
     <link rel="icon" type="image/png" href="/yjtp.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">复合选择器笔记（思维导图）</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -439,25 +439,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                                <span class="chip bg-color">思维导图</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
-                                <span class="chip bg-color">复合选择器</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -469,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-22
+                    2021-09-28
                 </div>
                 
 
@@ -490,7 +474,56 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3362048325.png"></p>
+                <h2 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a><strong>圆角边框</strong></h2><p>border-radius: length;</p>
+<p>border-top-left-radius  定义了左上角的弧度<br>border-top-right-radius  定义了右上角的弧度<br>border-bottom-right-radius  定义了右下角的弧度<br>border-bottom-left-radius  定义了左下角的弧度</p>
+<p><strong>border-radius: 左上角 右上角 右下角 左下角;</strong></p>
+<ol>
+<li>四个值: 第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角。</li>
+<li>三个值: 第一个值为左上角, 第二个值为右上角和左下角，第三个值为右下角</li>
+<li>两个值: 第一个值为左上角与右下角，第二个值为右上角与左下角</li>
+<li>一个值：四个圆角值相同</li>
+</ol>
+<p>其中每一个值可以为 数值或百分比的形式。</p>
+<p>技巧：让一个正方形 变成圆圈，圆角矩形也同理。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border-radius</span>: <span class="number">50%</span>; <span class="comment">/*或者是正方形的边长一半*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="盒子阴影（box-shadow）"><a href="#盒子阴影（box-shadow）" class="headerlink" title="盒子阴影（box-shadow）"></a>盒子阴影（box-shadow）</h2><p><strong>阴影不占用空间，不影响其他盒子排列</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">box-shadow</span>: offset-x offset-y [blur [spread]] [color] [inset]</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">offset-x</td>
+<td align="left">阴影的水平偏移量。正数向右偏移，负数向左偏移。</td>
+</tr>
+<tr>
+<td align="left">offset-y</td>
+<td align="left">阴影的垂直偏移量。正数向下偏移，负数向上偏移。</td>
+</tr>
+<tr>
+<td align="left">blur</td>
+<td align="left">可选。阴影模糊距离，越大越影子模糊，不能取负数。</td>
+</tr>
+<tr>
+<td align="left">spread</td>
+<td align="left">可选。阴影大小</td>
+</tr>
+<tr>
+<td align="left">color</td>
+<td align="left">可选。阴影的颜色</td>
+</tr>
+<tr>
+<td align="left">inset</td>
+<td align="left">可选。表示添加内阴影，默认为外阴影，（不可以写outset）</td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* box-shadow:水平位置 垂直位置 模糊距离 阴影尺寸（影子大小） 阴影颜色  内/外阴影； */</span></span><br><span class="line">   <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">15px</span> <span class="number">30px</span>  <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">4</span>);   </span><br></pre></td></tr></table></figure>
+
 
                 
             </div>
@@ -517,7 +550,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">http://example.com/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/</a>
+                    <a href="http://example.com/2021/09/28/%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/">http://example.com/2021/09/28/%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,23 +587,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                                    <span class="chip bg-color">思维导图</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
-                                    <span class="chip bg-color">复合选择器</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -744,13 +761,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/23/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/">
+                <a href="/2021/09/28/CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="css背景设置">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">css背景设置</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -761,7 +778,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-28
                         </span>
                         <span class="publish-author">
                             
@@ -781,13 +798,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/">
+                <a href="/2021/09/28/%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="元素显示模式笔记（思维导图）">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">元素显示模式笔记（思维导图）</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -798,7 +815,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-28
                             </span>
                         <span class="publish-author">
                             
@@ -807,26 +824,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">元素显示模式</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                        <span class="chip bg-color">思维导图</span>
-                    </a>
-                    
                 </div>
                 
             </div>

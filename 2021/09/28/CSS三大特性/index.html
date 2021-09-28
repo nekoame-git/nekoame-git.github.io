@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="复合选择器笔记（思维导图）, 233333">
+    <meta name="keywords" content="233333">
     <meta name="description" content="Blog学习分享">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>复合选择器笔记（思维导图） | 隐微のBlog</title>
+    <title>隐微のBlog</title>
     <link rel="icon" type="image/png" href="/yjtp.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">复合选择器笔记（思维导图）</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -439,25 +439,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                                <span class="chip bg-color">思维导图</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
-                                <span class="chip bg-color">复合选择器</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -469,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-22
+                    2021-09-28
                 </div>
                 
 
@@ -490,7 +474,62 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3362048325.png"></p>
+                <h1 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h1><h2 id="一、层叠性"><a href="#一、层叠性" class="headerlink" title="一、层叠性"></a>一、层叠性</h2><p>​    样式冲突，遵循就近原则，执行样式离结构近的</p>
+<p>​    样式不冲突则不层叠</p>
+<h2 id="二、继承性"><a href="#二、继承性" class="headerlink" title="二、继承性"></a>二、继承性</h2><p>子标签会继承父标签的某些样式，如文本颜色和字号</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>	&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span>&gt;</span><br><span class="line">     &lt;<span class="selector-tag">p</span>&gt;继承<span class="selector-tag">div</span>的样式，变为红色&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>恰当使用继承可以简化代码，降低CSS的复杂性</p>
+<p>子元素可以继承父元素的样式 （<strong>text-，font-，line-等开头的元素可以继承，以及color属性</strong>）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">24px</span>;	<span class="number">12</span>为字号，<span class="number">24</span>为行高</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">1.5</span>;		</span><br><span class="line">    <span class="comment">/*不跟单位时候，1.5则表示子元素div的行高*1.5倍，即10*1.5px=15px*/</span></span><br><span class="line">    行高使用倍数方便子元素根据字体大小自动调整行高</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span>&gt;继承<span class="selector-tag">body</span>行高，<span class="number">1.5</span>*<span class="number">10</span>=<span class="number">15px</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">ul</span>&gt;</span><br><span class="line">		&lt;/<span class="selector-tag">li</span>&gt;<span class="selector-tag">li</span>继承父类的大小行高，父类<span class="selector-tag">ul</span>未指定则再上一层<span class="selector-tag">body</span>，而<span class="selector-tag">body</span>的字体大小为<span class="number">12</span>，行高<span class="number">1.5</span>，则行高最后为当前文字大小的<span class="number">1.5</span>倍，则为<span class="number">12px</span>*<span class="number">1.5</span>=<span class="number">18px</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">	&lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、优先级"><a href="#三、优先级" class="headerlink" title="三、优先级"></a>三、优先级</h2><p>选择器权重</p>
+<table>
+<thead>
+<tr>
+<th align="left">标签选择器</th>
+<th align="left">计算权重公式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">继承或者 *</td>
+<td align="left">0,0,0,0</td>
+</tr>
+<tr>
+<td align="left">每个元素（标签选择器）</td>
+<td align="left">0,0,0,1</td>
+</tr>
+<tr>
+<td align="left">每个类，伪类</td>
+<td align="left">0,0,1,0</td>
+</tr>
+<tr>
+<td align="left">每个ID</td>
+<td align="left">0,1,0,0</td>
+</tr>
+<tr>
+<td align="left">每个行内样式 style=””</td>
+<td align="left">1,0,0,0</td>
+</tr>
+<tr>
+<td align="left">每个!important  最重要的</td>
+<td align="left">∞ 无穷大</td>
+</tr>
+</tbody></table>
+<p>值从左到右，左面的最大，一级大于一级，数位之间没有进制（会加到0,0,0,7也不会有进位），级别之间不可超越。</p>
+<p>关于CSS权重，我们需要一套计算公式来去计算，这个就是 CSS Specificity（特殊性）</p>
+<p>div { color: pink !important; }</p>
+<p>注意权重对应的<strong>对象</strong>是谁，有可能对于这个标签来说其实是继承。</p>
+<p>不管父元素的权重多高，子元素得到的权重都只是继承而已。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="selector-class">.test</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">div</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink<span class="meta">!important</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-id">#demo</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;test&quot; id=&quot;demo&quot; style=&quot;<span class="attribute">color</span>: purple<span class="string">&quot;&gt;你笑起来真好看&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>权重叠加：</strong>（如果是复合选择器，则会有权重叠加）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">ul</span>  <span class="selector-tag">li</span>   ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>	三个标签选择器权重相加</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>   ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>	</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>      -----—&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>	伪类 加 标签</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">a</span>       ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>	</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="comment">/* .nav li  权重是 11 */</span></span><br><span class="line">        <span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 需求把第一个小li 颜色改为 粉色加粗 ? */</span></span><br><span class="line">        <span class="comment">/* .pink  权重是 10  */</span></span><br><span class="line">       <span class="selector-class">.nav</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink;</span><br><span class="line">            <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;  </span><br><span class="line">    &lt;<span class="selector-tag">ul</span> class=&quot;<span class="selector-tag">nav</span>&quot;&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span> class=&quot;pink&quot;&gt;人生四大悲&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;家里没宽带&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;网速不够快&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;手机没流量&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;学校没wifi&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">    &lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里.nav未产生继承，因为.nav后面加了li，所以直接选择了li元素，所以.nav算为类的权重</strong></p>
 
                 
             </div>
@@ -517,7 +556,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">http://example.com/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/</a>
+                    <a href="http://example.com/2021/09/28/CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/">http://example.com/2021/09/28/CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,23 +593,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                                    <span class="chip bg-color">思维导图</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
-                                    <span class="chip bg-color">复合选择器</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -744,13 +767,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/23/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/">
+                <a href="/2021/09/28/%E5%AE%9A%E4%BD%8D/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="css背景设置">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">css背景设置</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -761,7 +784,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-28
                         </span>
                         <span class="publish-author">
                             
@@ -781,13 +804,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/">
+                <a href="/2021/09/28/%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="元素显示模式笔记（思维导图）">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">元素显示模式笔记（思维导图）</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -798,7 +821,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-28
                             </span>
                         <span class="publish-author">
                             
@@ -807,26 +830,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">元素显示模式</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                        <span class="chip bg-color">思维导图</span>
-                    </a>
-                    
                 </div>
                 
             </div>

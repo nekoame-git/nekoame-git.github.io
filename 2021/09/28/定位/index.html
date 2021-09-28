@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="复合选择器笔记（思维导图）, 233333">
+    <meta name="keywords" content="233333">
     <meta name="description" content="Blog学习分享">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>复合选择器笔记（思维导图） | 隐微のBlog</title>
+    <title>隐微のBlog</title>
     <link rel="icon" type="image/png" href="/yjtp.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">复合选择器笔记（思维导图）</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -439,25 +439,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                                <span class="chip bg-color">思维导图</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
-                                <span class="chip bg-color">复合选择器</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -469,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-22
+                    2021-09-28
                 </div>
                 
 
@@ -490,7 +474,176 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3362048325.png"></p>
+                <h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p><strong>「1. 定位详解」</strong></p>
+<p>将盒子<strong>「定」</strong>在某一个<strong>「位」</strong>置  自由的漂浮在其他盒子(包括标准流和浮动)的上面。</p>
+<p>所以，我们脑海应该有三种布局机制的上下顺序👇👇<br>标准流在最底层 (海底)  ——-   浮动 的盒子 在 中间层  (海面)  ——-  定位的盒子 在 最上层  （天空）</p>
+<p><strong>定位</strong>是用来布局的，它有两部分组成：定位 = 定位模式 + 边偏移</p>
+<p>在 CSS 中，通过 <code>top</code>、<code>bottom</code>、<code>left</code> 和 <code>right</code> 属性定义元素的<strong>「边偏移」</strong>：（方位名词）</p>
+<table>
+<thead>
+<tr>
+<th align="left">边偏移属性</th>
+<th align="left">示例</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>top</code></td>
+<td align="left"><code>top: 80px</code></td>
+<td align="left"><strong>「顶端」</strong>偏移量，定义元素相对于其父元素<strong>「上边线的距离」</strong>。</td>
+</tr>
+<tr>
+<td align="left"><code>bottom</code></td>
+<td align="left"><code>bottom: 80px</code></td>
+<td align="left"><strong>「底部」</strong>偏移量，定义元素相对于其父元素<strong>「下边线的距离」</strong>。</td>
+</tr>
+<tr>
+<td align="left"><code>left</code></td>
+<td align="left"><code>left: 80px</code></td>
+<td align="left"><strong>「左侧」</strong>偏移量，定义元素相对于其父元素<strong>「左边线的距离」</strong>。</td>
+</tr>
+<tr>
+<td align="left"><code>right</code></td>
+<td align="left"><code>right: 80px</code></td>
+<td align="left"><strong>「右侧」</strong>偏移量，定义元素相对于其父元素<strong>「右边线的距离」</strong></td>
+</tr>
+</tbody></table>
+<p><strong>「2. 定位模式(position)」</strong>在 CSS 中，通过 <code>position</code> 属性定义元素的<strong>「定位模式」</strong>，语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; position: 属性值; &#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="center">语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>static</code></td>
+<td align="center"><strong>「静态」</strong>定位</td>
+</tr>
+<tr>
+<td align="left"><code>relative</code></td>
+<td align="center"><strong>「相对」</strong>定位</td>
+</tr>
+<tr>
+<td align="left"><code>absolute</code></td>
+<td align="center"><strong>「绝对」</strong>定位</td>
+</tr>
+<tr>
+<td align="left"><code>fixed</code></td>
+<td align="center"><strong>「固定」</strong>定位</td>
+</tr>
+</tbody></table>
+<p><strong>「3. 静态定位(static)」</strong></p>
+<ul>
+<li>静态定位是元素的默认定位方式，无定位的意思。它相当于border里面的none，不要定位的时候用。</li>
+<li>静态定位 按照标准流特性摆放位置。它没有边偏移。</li>
+<li>静态定位在布局时几乎不用</li>
+</ul>
+<p><strong>「4. 相对定位(relative)」</strong></p>
+<ul>
+<li>相对定位是元素相对于它原来在标准流中的位置来说的。</li>
+<li>相对于自己原来在标准流中位置来移动的</li>
+<li>原来在标准流的区域继续占有，后面的盒子仍然以标准流的方式对待它。</li>
+</ul>
+<p><strong>「5. 绝对定位(absolute)」</strong></p>
+<p>绝对定位是元素以带有定位的父级元素来移动位置</p>
+<ul>
+<li>完全脱标–完全<strong>不占位置</strong>；</li>
+<li>如果父元素没有定位（position），则以浏览器为准定位(Document文档)。</li>
+</ul>
+<blockquote>
+<p>绝对定位/固定定位的盒子不能通过设置margin: auto设置水平居中 在使用绝对定位时要向实现水平居中，可以按照下面的方法：</p>
+</blockquote>
+<ol>
+<li>left : 50%:让盒子的左侧移动到父级元素的水平中心位置；</li>
+<li>margin-left: -100px;让盒子向左移动自身宽度200px的一半。</li>
+<li>同理垂直居中。</li>
+</ol>
+<h4 id="父元素有定位"><a href="#父元素有定位" class="headerlink" title="父元素有定位"></a>父元素有定位</h4><h5 id="定位口诀–子绝父相"><a href="#定位口诀–子绝父相" class="headerlink" title="定位口诀–子绝父相"></a>定位口诀–子绝父相</h5><p>​            例如图片的左右滑动切换按钮和小点，则是采用了子绝父相。</p>
+<p><strong>「6. 固定定位(fixed)」</strong></p>
+<p>固定定位是绝对定位的一种特殊形式;</p>
+<ul>
+<li><p>完全脱标–完全不占位置；</p>
+</li>
+<li><p>只认<strong>浏览器的可视窗口</strong>–浏览器可视窗口+边偏移属性来设置元素的位置</p>
+<p>​    跟父元素没有任何关系；单独使用</p>
+<p>​    不随滚动条滚动</p>
+</li>
+</ul>
+<p><strong>固定小技巧，固定在版心右侧：</strong></p>
+<p>​        1、先让固定盒子left：50%，走到浏览器可视区域中心的右侧。</p>
+<p>​        2、让固定册子的margin-left：版心宽度的一半距离。则可以让盒子贴着版心右侧对齐。</p>
+<p><strong>「7. 粘性定位(sticky)」</strong></p>
+<p>​    特点：相对定位和固定定位的混合，拉到顶住则变为固定定位，兼容性差，ie不支持。</p>
+<ol>
+<li>以浏览器的可视窗口作为参照点移动元素（固定定位特点）</li>
+<li>粘性定位<strong>占有原先的位置</strong>（相对定位特点）</li>
+<li>必须添加top、left、right、bottom其中一个才有效</li>
+</ol>
+<h4 id="定位小结"><a href="#定位小结" class="headerlink" title="定位小结"></a>定位小结</h4><table>
+<thead>
+<tr>
+<th align="left">定位模式</th>
+<th align="left">是否脱标占有位置</th>
+<th align="left">移动位置基准</th>
+<th align="left">模式转换（行内块）</th>
+<th align="left">使用情况</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">静态static</td>
+<td align="left">不脱标，正常模式</td>
+<td align="left">正常模式</td>
+<td align="left">不能</td>
+<td align="left">几乎不用</td>
+</tr>
+<tr>
+<td align="left"><strong>相对定位relative</strong></td>
+<td align="left"><strong>不脱标，占有位置</strong></td>
+<td align="left"><strong>相对自身位置移动</strong></td>
+<td align="left"><strong>不能</strong></td>
+<td align="left"><strong>基本单独使用</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>绝对定位absolute</strong></td>
+<td align="left"><strong>完全脱标，不占有位置</strong></td>
+<td align="left"><strong>相对于定位父级移动位置</strong></td>
+<td align="left"><strong>能</strong></td>
+<td align="left"><strong>要和定位父级元素搭配使用</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>固定定位fixed</strong></td>
+<td align="left"><strong>完全脱标，不占有位置</strong></td>
+<td align="left"><strong>相对于浏览器可视区域移动位置</strong></td>
+<td align="left"><strong>能</strong></td>
+<td align="left"><strong>单独使用，不需要父级</strong></td>
+</tr>
+<tr>
+<td align="left">sticky粘性定位</td>
+<td align="left">否（占有位置）</td>
+<td align="left">浏览器可视区</td>
+<td align="left"></td>
+<td align="left">当前阶段少</td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong></p>
+<ol>
+<li><code>边偏移</code> 需要和 <code>定位模式</code> 联合使用，<code>单独使用无效</code>；</li>
+<li><code>top</code> 和 <code>bottom</code> 不要同时使用；</li>
+<li><code>left</code> 和 <code>right</code> 不要同时使用。</li>
+</ol>
+<h4 id="堆叠顺序（z-index）"><a href="#堆叠顺序（z-index）" class="headerlink" title="堆叠顺序（z-index）"></a>堆叠顺序（z-index）</h4><p>在使用<strong>「定位」</strong>布局时，可能会<strong>「出现盒子重叠的情况」</strong>。</p>
+<p>加了定位的盒子，默认<strong>「后来者居上」</strong>， 后面的盒子会压住前面的盒子。</p>
+<p>应用 <code>z-index</code> 层叠等级属性可以<strong>「调整盒子的堆叠顺序」</strong>。如下图所示：</p>
+<p>z-index的特性如下:</p>
+<ol>
+<li><strong>属性值</strong>：正整数、负整数或 0，默认值是 0，数值越大，盒子越靠上；</li>
+<li>如果属性值相同，则按照书写顺序，后来居上；</li>
+<li>数字后面不能加单位</li>
+<li>z-index只能用于相对定位、绝对定位和固定定位的元素，其他标准流、浮动和静态定位无效。</li>
+</ol>
 
                 
             </div>
@@ -517,7 +670,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">http://example.com/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/</a>
+                    <a href="http://example.com/2021/09/28/%E5%AE%9A%E4%BD%8D/">http://example.com/2021/09/28/%E5%AE%9A%E4%BD%8D/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,23 +707,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                                    <span class="chip bg-color">思维导图</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
-                                    <span class="chip bg-color">复合选择器</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -744,13 +881,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/23/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/">
+                <a href="/2021/09/28/%E6%B5%AE%E5%8A%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="css背景设置">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">css背景设置</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -761,7 +898,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-28
                         </span>
                         <span class="publish-author">
                             
@@ -781,13 +918,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/">
+                <a href="/2021/09/28/CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="元素显示模式笔记（思维导图）">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">元素显示模式笔记（思维导图）</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -798,7 +935,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-28
                             </span>
                         <span class="publish-author">
                             
@@ -807,26 +944,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">元素显示模式</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                        <span class="chip bg-color">思维导图</span>
-                    </a>
-                    
                 </div>
                 
             </div>

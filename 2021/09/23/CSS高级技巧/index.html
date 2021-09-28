@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="复合选择器笔记（思维导图）, 233333">
+    <meta name="keywords" content="css背景设置, 233333">
     <meta name="description" content="Blog学习分享">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>复合选择器笔记（思维导图） | 隐微のBlog</title>
+    <title>css背景设置 | 隐微のBlog</title>
     <link rel="icon" type="image/png" href="/yjtp.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">复合选择器笔记（思维导图）</h1>
+                    <h1 class="description center-align post-title">css背景设置</h1>
                 </div>
             </div>
         </div>
@@ -439,25 +439,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                                <span class="chip bg-color">思维导图</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
-                                <span class="chip bg-color">复合选择器</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -469,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-22
+                    2021-09-23
                 </div>
                 
 
@@ -490,7 +474,118 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3362048325.png"></p>
+                <h3 id="CSS-三角形"><a href="#CSS-三角形" class="headerlink" title="CSS 三角形"></a><strong>CSS 三角形</strong></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">   <span class="attribute">width</span>: <span class="number">0</span>; </span><br><span class="line">   <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">line-height</span>:<span class="number">0</span>；</span><br><span class="line">   font-size: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">border-top</span>: <span class="number">10px</span> solid red;</span><br><span class="line">   <span class="attribute">border-right</span>: <span class="number">10px</span> solid green;</span><br><span class="line">   <span class="attribute">border-bottom</span>: <span class="number">10px</span> solid blue;</span><br><span class="line">   <span class="attribute">border-left</span>: <span class="number">10px</span> solid <span class="number">#000</span>; </span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>我们用css <strong>边框</strong>border可以模拟三角效果</li>
+<li>内容宽度高度为0</li>
+<li>我们4个边框都要写， 只保留需要的边框颜色，其余的不能省略，都改为 transparent 透明就好了</li>
+<li>为了照顾兼容性 低版本的浏览器，加上 font-size: 0;  line-height: 0;</li>
+</ol>
+<h3 id="CSS用户界面样式"><a href="#CSS用户界面样式" class="headerlink" title="CSS用户界面样式"></a><strong>CSS用户界面样式</strong></h3><p>所谓的界面样式， 就是更改一些用户操作样式，以便提高更好的用户体验。</p>
+<ul>
+<li>更改用户的鼠标样式</li>
+<li>表单轮廓等。</li>
+<li>防止表单域拖拽</li>
+</ul>
+<h4 id="2-1-鼠标样式"><a href="#2-1-鼠标样式" class="headerlink" title="2.1 鼠标样式"></a>2.1 鼠标样式</h4><p>设置或检索在对象上移动的鼠标指针采用何种系统预定义的光标形状。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">default</td>
+<td align="left">小白  默认</td>
+</tr>
+<tr>
+<td align="left">pointer</td>
+<td align="left">小手</td>
+</tr>
+<tr>
+<td align="left">move</td>
+<td align="left">移动</td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">文本</td>
+</tr>
+<tr>
+<td align="left">not-allowed</td>
+<td align="left">禁止</td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">ul</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">li</span> style=&quot;<span class="attribute">cursor</span><span class="selector-pseudo">:default</span>&quot;&gt;我是小白&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">li</span> style=&quot;<span class="attribute">cursor</span>:pointer<span class="string">&quot;&gt;我是小手&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li style=&quot;</span>cursor:move<span class="string">&quot;&gt;我是移动&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li style=&quot;</span>cursor:text<span class="string">&quot;&gt;我是文本&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li style=&quot;</span>cursor:not-allowed<span class="string">&quot;&gt;我是文本&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-轮廓线-outline"><a href="#2-2-轮廓线-outline" class="headerlink" title="2.2 轮廓线 outline"></a>2.2 轮廓线 outline</h4><p>是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">outline</span> : outline-color ||outline-style || outline-width </span><br></pre></td></tr></table></figure>
+
+<p><strong>一般为消除表单的轮廓线</strong><br>最直接的写法是 ： outline: 0;  或者  outline: none;</p>
+<h4 id="2-3-防止拖拽文本域resize"><a href="#2-3-防止拖拽文本域resize" class="headerlink" title="2.3 防止拖拽文本域resize"></a>2.3 防止拖拽文本域resize</h4><p>![图片](../images/CSS 三角形/640.webp)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">textarea</span>  style=&quot;<span class="attribute">resize</span>: none;&quot;&gt;&lt;/<span class="selector-tag">textarea</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-用户界面样式总结"><a href="#2-4-用户界面样式总结" class="headerlink" title="2.4 用户界面样式总结"></a>2.4 用户界面样式总结</h4><table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">用途</th>
+<th align="left">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">鼠标样式</td>
+<td align="left">更改鼠标样式cursor</td>
+<td align="left">样式很多，重点记住 pointer</td>
+</tr>
+<tr>
+<td align="left">轮廓线</td>
+<td align="left">表单默认outline</td>
+<td align="left">outline 轮廓线，我们一般直接去掉，border是边框，我们会经常用</td>
+</tr>
+<tr>
+<td align="left">防止拖拽</td>
+<td align="left">主要针对文本域resize</td>
+<td align="left">防止用户随意拖拽文本域，造成页面布局混乱，我们resize:none</td>
+</tr>
+</tbody></table>
+<h2 id="vertical-align-垂直对齐"><a href="#vertical-align-垂直对齐" class="headerlink" title="vertical-align 垂直对齐"></a>vertical-align 垂直对齐</h2><ul>
+<li>有宽度的块级元素居中对齐，是margin: 0 auto;</li>
+<li>让文字居中对齐，是 text-align: center;</li>
+</ul>
+<p>vertical-align 垂直对齐，它只针对于<strong>「行内元素」</strong>或者<strong>「行内块元素」</strong></p>
+<p><img src="../images/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/%E5%AD%97%E4%BD%93%E7%BA%BF.jpg"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">设置或检索对象内容的垂直对其方式。</span><br><span class="line"><span class="attribute">vertical-align</span> : baseline 基线|top 顶线 |middle中线 |bottom 底线</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>vertical-align 不影响块级元素中的内容对齐，它只针对于整体<strong>「行内元素」</strong>或者<strong>「行内块元素」</strong>，</p>
+<p>特别是行内块元素， 通常用来控制图片/表单与文字的对齐。</p>
+<h4 id="3-1-图片、表单和文字对齐"><a href="#3-1-图片、表单和文字对齐" class="headerlink" title="3.1 图片、表单和文字对齐"></a>3.1 图片、表单和文字对齐</h4><p>我们可以通过<code>vertical-align</code> 控制图片和文字的垂直关系了。默认的图片会和文字基线对齐。</p>
+<p><img src="../images/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/vertical-align.jpg" alt="图片"></p>
+<h4 id="3-2-去图片底侧空白缝隙"><a href="#3-2-去图片底侧空白缝隙" class="headerlink" title="3.2 去图片底侧空白缝隙"></a>3.2 去图片底侧空白缝隙</h4><p><strong>原因：</strong>图片或者表单等行内块元素，他的底线会和父级盒子的基线对齐。</p>
+<p>就是图片底侧会有一个空白缝隙。</p>
+<p><strong>解决方法：</strong></p>
+<ul>
+<li><p>给img  vertical-align:middle | top| bottom等等。 让图片不要和基线对齐。</p>
+</li>
+<li><p>给img 添加 display：block; 转换为块级元素就不会存在问题了。</p>
+</li>
+</ul>
+<h3 id="溢出的文字省略号显示"><a href="#溢出的文字省略号显示" class="headerlink" title="溢出的文字省略号显示"></a>溢出的文字省略号显示</h3><h4 id="4-1-white-space"><a href="#4-1-white-space" class="headerlink" title="4.1 white-space"></a>4.1 white-space</h4><ul>
+<li>white-space设置或检索对象内文本显示方式。通常我们使用于强制一行显示内容</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">white-space</span>:normal ；默认处理方式</span><br><span class="line"></span><br><span class="line">white-space:nowrap ； 强制在同一行内显示所有文本，直到文本结束或者遭遇br标签对象才换行。</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-text-overflow-文字溢出"><a href="#4-2-text-overflow-文字溢出" class="headerlink" title="4.2 text-overflow 文字溢出"></a>4.2 text-overflow 文字溢出</h4><ul>
+<li>设置或检索是否使用一个省略标记（…）标示对象内文本的溢出</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">text-overflow</span> : clip ；不显示省略标记（...），而是简单的裁切 </span><br><span class="line"></span><br><span class="line">text-overflow：ellipsis ； 当对象内文本溢出时显示省略标记（...）</span><br></pre></td></tr></table></figure>
+
+<p><strong>「注意」</strong>：</p>
+<p>一定要首先强制一行内显示，再次和overflow属性  搭配使用</p>
+<h4 id="4-3-总结三步曲"><a href="#4-3-总结三步曲" class="headerlink" title="4.3 总结三步曲"></a>4.3 总结三步曲</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*1. 先强制一行内显示文本*/</span></span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line"><span class="comment">/*2. 超出的部分隐藏*/</span></span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line"><span class="comment">/*3. 文字用省略号替代超出的部分*/</span></span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;</span><br></pre></td></tr></table></figure>
+
 
                 
             </div>
@@ -517,7 +612,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">http://example.com/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/</a>
+                    <a href="http://example.com/2021/09/23/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/">http://example.com/2021/09/23/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,23 +649,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
-                                    <span class="chip bg-color">思维导图</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
-                                    <span class="chip bg-color">复合选择器</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -744,7 +823,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/23/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/">
+                <a href="/2021/09/23/CSS%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE/">
                     <div class="card-image">
                         
                         
@@ -781,13 +860,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/">
+                <a href="/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="元素显示模式笔记（思维导图）">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="复合选择器笔记（思维导图）">
                         
-                        <span class="card-title">元素显示模式笔记（思维导图）</span>
+                        <span class="card-title">复合选择器笔记（思维导图）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -819,12 +898,12 @@
                         <span class="chip bg-color">笔记</span>
                     </a>
                     
-                    <a href="/tags/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">元素显示模式</span>
-                    </a>
-                    
                     <a href="/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
                         <span class="chip bg-color">思维导图</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
+                        <span class="chip bg-color">复合选择器</span>
                     </a>
                     
                 </div>
