@@ -453,7 +453,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-28
+                    2021-11-28
                 </div>
                 
 
@@ -474,44 +474,82 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>清除元素的默认内外边距👇👇</strong></p>
+                <h1 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h1><h4 id="1-1-display-显示（重点）"><a href="#1-1-display-显示（重点）" class="headerlink" title="1.1 display 显示（重点）"></a>1.1 display 显示（重点）</h4><p>display设置或检索对象是否显示或如何显示。</p>
 <ul>
-<li>行内元素为了照顾兼容性,尽量只设置左右内外边距，不要设置上下内外边距。</li>
+<li><p>display: none 隐藏对象</p>
+</li>
+<li><ul>
+<li>特点：隐藏之后，**<code>不再保留位置。</code>**</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">padding</span>:<span class="number">0</span>;         <span class="comment">/* 清除内边距 */</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">0</span>;          <span class="comment">/* 清除外边距 */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>display: block 除了转换为块级元素之外，同时还有显示元素的意思。</p>
+</li>
+</ul>
+<p><code>实际开发场景</code>：配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">&#125;</span><br><span class="line">当鼠标放到box上时候，则显示隐藏的<span class="attribute">mask</span>遮罩元素</span><br></pre></td></tr></table></figure>
 
 
 
-<p>使用margin定义块元素的<strong>「垂直外边距」</strong>时，可能会出现外边距的合并。</p>
-<h6 id="1-相邻块元素垂直外边距的合并"><a href="#1-相邻块元素垂直外边距的合并" class="headerlink" title="(1). 相邻块元素垂直外边距的合并"></a>(1). 相邻块元素垂直外边距的合并</h6><ul>
-<li>当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom</li>
-<li>下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和</li>
-<li><strong>「取两个值中的较大者」</strong>这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。</li>
+<h4 id="1-2-visibility-可见性"><a href="#1-2-visibility-可见性" class="headerlink" title="1.2 visibility 可见性"></a>1.2 visibility 可见性</h4><p>设置或检索是否显示对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">visibility：visible ;  对象可视</span><br><span class="line"></span><br><span class="line">visibility：hidden;    对象隐藏</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>特点：隐藏之后，<code>继续保留原有位置</code>。</li>
 </ul>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/y7EkeCWAzmqtcdL7HZYccBic0jicaWzR8b15wO9U7G1QHGZRB5OIsdJaCdPeg7MzVYtTsbhfGPusK7OCOwWtvs4A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
-<p><strong>「解决方案：尽量给只给一个盒子添加margin值」</strong>。</p>
-<h4 id="2-嵌套块元素垂直外边距的合并（塌陷）"><a href="#2-嵌套块元素垂直外边距的合并（塌陷）" class="headerlink" title="(2). 嵌套块元素垂直外边距的合并（塌陷）"></a>(2). 嵌套块元素垂直外边距的合并（塌陷）</h4><ul>
-<li>对于两个嵌套关系的块元素，如果父元素没有上内边距及边框</li>
-<li>父元素的上外边距会与子元素的上外边距发生合并</li>
-<li>合并后的外边距为两者中的较大者</li>
-</ul>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/y7EkeCWAzmqtcdL7HZYccBic0jicaWzR8by8DvQuDYlXKtzlIWtltPGPW0HtWAqoaWKr6cy6jYzc4hrVmR6CFlDA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
-<p><strong>「解决方案：」</strong></p>
+<h4 id="1-3-overflow-溢出"><a href="#1-3-overflow-溢出" class="headerlink" title="1.3 overflow 溢出"></a>1.3 overflow 溢出</h4><p>检索或设置当对象的内容超过其指定高度及宽度时如何管理内容。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">visible</td>
+<td align="left">不剪切内容也不添加滚动条</td>
+</tr>
+<tr>
+<td align="left">hidden</td>
+<td align="left">不显示超过对象尺寸的内容，超出的部分隐藏掉</td>
+</tr>
+<tr>
+<td align="left">scroll</td>
+<td align="left">不管超出内容否，总是显示滚动条</td>
+</tr>
+<tr>
+<td align="left">auto</td>
+<td align="left">超出自动显示滚动条，不超出不显示滚动条</td>
+</tr>
+</tbody></table>
+<p><code>实际开发场景</code>：</p>
 <ol>
-<li>可以为父元素定义上边框。</li>
-<li>可以为父元素定义上内边距</li>
-<li>可以为父元素添加overflow: hidden。</li>
+<li>清除浮动</li>
+<li>隐藏超出内容，隐藏掉,  不允许内容超过父盒子。</li>
 </ol>
-<p>还有其他方法，比如浮动、固定、绝对定位的盒子不会有问题，后面咱们再总结。。。</p>
-<h4 id="盒子模型布局稳定性"><a href="#盒子模型布局稳定性" class="headerlink" title="盒子模型布局稳定性"></a>盒子模型布局稳定性</h4><p>优先使用  宽度 （width）  其次 使用内边距（padding）   再次  外边距（margin）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">width &gt;  padding  &gt;   margin   </span><br></pre></td></tr></table></figure>
-
-<p><strong>原因：</strong></p>
-<ul>
-<li>margin 会有外边距合并 还有 ie6下面margin 加倍的bug（讨厌）所以最后使用。</li>
-<li>padding  会影响盒子大小， 需要进行加减计算（麻烦） 其次使用。</li>
-<li>width  没有问题（嗨皮）我们经常使用宽度剩余法 高度剩余法来做。</li>
-</ul>
+<h4 id="1-4-显示与隐藏总结"><a href="#1-4-显示与隐藏总结" class="headerlink" title="1.4 显示与隐藏总结"></a>1.4 显示与隐藏总结</h4><table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">区别</th>
+<th align="left">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">display</td>
+<td align="left">隐藏对象，<strong>不保留位置</strong></td>
+<td align="left">配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</td>
+</tr>
+<tr>
+<td align="left">visibility</td>
+<td align="left">隐藏对象，<strong>保留位置</strong></td>
+<td align="left">使用较少</td>
+</tr>
+<tr>
+<td align="left">overflow</td>
+<td align="left">只是隐藏超出大小的部分</td>
+<td align="left">1. 可以清除浮动 2. 保证盒子里面的内容不会超出该盒子范围</td>
+</tr>
+</tbody></table>
 
                 
             </div>
@@ -538,7 +576,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/09/28/%E7%9B%B8%E9%82%BB%E5%9D%97%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6/">http://example.com/2021/09/28/%E7%9B%B8%E9%82%BB%E5%9D%97%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6/</a>
+                    <a href="http://example.com/2021/11/28/%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/">http://example.com/2021/11/28/%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -623,7 +661,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/28/%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/">
+                <a href="/2021/11/28/%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/">
                     <div class="card-image">
                         
                         
@@ -640,7 +678,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-28
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-28
                         </span>
                         <span class="publish-author">
                             
@@ -660,13 +698,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/28/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95/">
+                <a href="/2021/11/28/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -677,7 +715,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-28
                             </span>
                         <span class="publish-author">
                             
