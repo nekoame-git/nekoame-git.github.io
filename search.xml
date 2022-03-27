@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Bootstrap学习笔记</title>
-    <url>/2021/10/10/Bootstrap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <url>/2021/11/28/Bootstrap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="Bootstrap学习笔记"><a href="#Bootstrap学习笔记" class="headerlink" title="Bootstrap学习笔记"></a>Bootstrap学习笔记</h1><h2 id="一、栅格系统"><a href="#一、栅格系统" class="headerlink" title="一、栅格系统"></a>一、栅格系统</h2><p>通过一系列的行(row)与列(column)的组合来创建页面布局，按照不同尺寸屏幕分为1~12份</p>
 <table>
 <thead>
@@ -1769,7 +1769,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>清除元素的默认内外边距</title>
     <url>/2021/11/28/%E7%9B%B8%E9%82%BB%E5%9D%97%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6/</url>
     <content><![CDATA[<p><strong>清除元素的默认内外边距👇👇</strong></p>
 <ul>
@@ -1810,5 +1810,9 @@
 <li>width  没有问题（嗨皮）我们经常使用宽度剩余法 高度剩余法来做。</li>
 </ul>
 ]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>笔记</tag>
+      </tags>
   </entry>
 </search>
