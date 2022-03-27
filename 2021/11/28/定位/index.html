@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nekoame-git.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="定位「1. 定位详解」 将盒子「定」在某一个「位」置  自由的漂浮在其他盒子(包括标准流和浮动)的上面。 所以，我们脑海应该有三种布局机制的上下顺序👇👇标准流在最底层 (海底)  ——-   浮动 的盒子 在 中间层  (海面)  ——-  定位的盒子 在 最上层  （天空） 定位是用来布局的，它有两部分组成：定位 &#x3D; 定位模式 + 边偏移 在 CSS 中，通过 top、bottom、left">
+<meta property="og:type" content="article">
+<meta property="og:title" content="隐微のBlog">
+<meta property="og:url" content="https://nekoame-git.github.io/2021/11/28/%E5%AE%9A%E4%BD%8D/index.html">
+<meta property="og:site_name" content="隐微のBlog">
+<meta property="og:description" content="定位「1. 定位详解」 将盒子「定」在某一个「位」置  自由的漂浮在其他盒子(包括标准流和浮动)的上面。 所以，我们脑海应该有三种布局机制的上下顺序👇👇标准流在最底层 (海底)  ——-   浮动 的盒子 在 中间层  (海面)  ——-  定位的盒子 在 最上层  （天空） 定位是用来布局的，它有两部分组成：定位 &#x3D; 定位模式 + 边偏移 在 CSS 中，通过 top、bottom、left">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-28T04:29:35.154Z">
+<meta property="article:modified_time" content="2021-09-28T14:05:04.801Z">
+<meta property="article:author" content="隐微">
+<meta property="article:tag" content="233333">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://nekoame-git.github.io/2021/11/28/%E5%AE%9A%E4%BD%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 隐微のBlog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">隐微のBlog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nekoame-git.github.io/2021/11/28/%E5%AE%9A%E4%BD%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="隐微">
+      <meta itemprop="description" content="Blog学习分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隐微のBlog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-28 12:29:35" itemprop="dateCreated datePublished" datetime="2021-11-28T12:29:35+08:00">2021-11-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-28 22:05:04" itemprop="dateModified" datetime="2021-09-28T22:05:04+08:00">2021-09-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p><strong>「1. 定位详解」</strong></p>
+<p>将盒子<strong>「定」</strong>在某一个<strong>「位」</strong>置  自由的漂浮在其他盒子(包括标准流和浮动)的上面。</p>
+<p>所以，我们脑海应该有三种布局机制的上下顺序👇👇<br>标准流在最底层 (海底)  ——-   浮动 的盒子 在 中间层  (海面)  ——-  定位的盒子 在 最上层  （天空）</p>
+<p><strong>定位</strong>是用来布局的，它有两部分组成：定位 = 定位模式 + 边偏移</p>
+<p>在 CSS 中，通过 <code>top</code>、<code>bottom</code>、<code>left</code> 和 <code>right</code> 属性定义元素的<strong>「边偏移」</strong>：（方位名词）</p>
+<table>
+<thead>
+<tr>
+<th align="left">边偏移属性</th>
+<th align="left">示例</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>top</code></td>
+<td align="left"><code>top: 80px</code></td>
+<td align="left"><strong>「顶端」</strong>偏移量，定义元素相对于其父元素<strong>「上边线的距离」</strong>。</td>
+</tr>
+<tr>
+<td align="left"><code>bottom</code></td>
+<td align="left"><code>bottom: 80px</code></td>
+<td align="left"><strong>「底部」</strong>偏移量，定义元素相对于其父元素<strong>「下边线的距离」</strong>。</td>
+</tr>
+<tr>
+<td align="left"><code>left</code></td>
+<td align="left"><code>left: 80px</code></td>
+<td align="left"><strong>「左侧」</strong>偏移量，定义元素相对于其父元素<strong>「左边线的距离」</strong>。</td>
+</tr>
+<tr>
+<td align="left"><code>right</code></td>
+<td align="left"><code>right: 80px</code></td>
+<td align="left"><strong>「右侧」</strong>偏移量，定义元素相对于其父元素<strong>「右边线的距离」</strong></td>
+</tr>
+</tbody></table>
+<p><strong>「2. 定位模式(position)」</strong>在 CSS 中，通过 <code>position</code> 属性定义元素的<strong>「定位模式」</strong>，语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; position: 属性值; &#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="center">语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>static</code></td>
+<td align="center"><strong>「静态」</strong>定位</td>
+</tr>
+<tr>
+<td align="left"><code>relative</code></td>
+<td align="center"><strong>「相对」</strong>定位</td>
+</tr>
+<tr>
+<td align="left"><code>absolute</code></td>
+<td align="center"><strong>「绝对」</strong>定位</td>
+</tr>
+<tr>
+<td align="left"><code>fixed</code></td>
+<td align="center"><strong>「固定」</strong>定位</td>
+</tr>
+</tbody></table>
+<p><strong>「3. 静态定位(static)」</strong></p>
+<ul>
+<li>静态定位是元素的默认定位方式，无定位的意思。它相当于border里面的none，不要定位的时候用。</li>
+<li>静态定位 按照标准流特性摆放位置。它没有边偏移。</li>
+<li>静态定位在布局时几乎不用</li>
+</ul>
+<p><strong>「4. 相对定位(relative)」</strong></p>
+<ul>
+<li>相对定位是元素相对于它原来在标准流中的位置来说的。</li>
+<li>相对于自己原来在标准流中位置来移动的</li>
+<li>原来在标准流的区域继续占有，后面的盒子仍然以标准流的方式对待它。</li>
+</ul>
+<p><strong>「5. 绝对定位(absolute)」</strong></p>
+<p>绝对定位是元素以带有定位的父级元素来移动位置</p>
+<ul>
+<li>完全脱标–完全<strong>不占位置</strong>；</li>
+<li>如果父元素没有定位（position），则以浏览器为准定位(Document文档)。</li>
+</ul>
+<blockquote>
+<p>绝对定位/固定定位的盒子不能通过设置margin: auto设置水平居中 在使用绝对定位时要向实现水平居中，可以按照下面的方法：</p>
+</blockquote>
+<ol>
+<li>left : 50%:让盒子的左侧移动到父级元素的水平中心位置；</li>
+<li>margin-left: -100px;让盒子向左移动自身宽度200px的一半。</li>
+<li>同理垂直居中。</li>
+</ol>
+<h4 id="父元素有定位"><a href="#父元素有定位" class="headerlink" title="父元素有定位"></a>父元素有定位</h4><h5 id="定位口诀–子绝父相"><a href="#定位口诀–子绝父相" class="headerlink" title="定位口诀–子绝父相"></a>定位口诀–子绝父相</h5><p>​            例如图片的左右滑动切换按钮和小点，则是采用了子绝父相。</p>
+<p><strong>「6. 固定定位(fixed)」</strong></p>
+<p>固定定位是绝对定位的一种特殊形式;</p>
+<ul>
+<li><p>完全脱标–完全不占位置；</p>
+</li>
+<li><p>只认<strong>浏览器的可视窗口</strong>–浏览器可视窗口+边偏移属性来设置元素的位置</p>
+<p>​    跟父元素没有任何关系；单独使用</p>
+<p>​    不随滚动条滚动</p>
+</li>
+</ul>
+<p><strong>固定小技巧，固定在版心右侧：</strong></p>
+<p>​        1、先让固定盒子left：50%，走到浏览器可视区域中心的右侧。</p>
+<p>​        2、让固定册子的margin-left：版心宽度的一半距离。则可以让盒子贴着版心右侧对齐。</p>
+<p><strong>「7. 粘性定位(sticky)」</strong></p>
+<p>​    特点：相对定位和固定定位的混合，拉到顶住则变为固定定位，兼容性差，ie不支持。</p>
+<ol>
+<li>以浏览器的可视窗口作为参照点移动元素（固定定位特点）</li>
+<li>粘性定位<strong>占有原先的位置</strong>（相对定位特点）</li>
+<li>必须添加top、left、right、bottom其中一个才有效</li>
+</ol>
+<h4 id="定位小结"><a href="#定位小结" class="headerlink" title="定位小结"></a>定位小结</h4><table>
+<thead>
+<tr>
+<th align="left">定位模式</th>
+<th align="left">是否脱标占有位置</th>
+<th align="left">移动位置基准</th>
+<th align="left">模式转换（行内块）</th>
+<th align="left">使用情况</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">静态static</td>
+<td align="left">不脱标，正常模式</td>
+<td align="left">正常模式</td>
+<td align="left">不能</td>
+<td align="left">几乎不用</td>
+</tr>
+<tr>
+<td align="left"><strong>相对定位relative</strong></td>
+<td align="left"><strong>不脱标，占有位置</strong></td>
+<td align="left"><strong>相对自身位置移动</strong></td>
+<td align="left"><strong>不能</strong></td>
+<td align="left"><strong>基本单独使用</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>绝对定位absolute</strong></td>
+<td align="left"><strong>完全脱标，不占有位置</strong></td>
+<td align="left"><strong>相对于定位父级移动位置</strong></td>
+<td align="left"><strong>能</strong></td>
+<td align="left"><strong>要和定位父级元素搭配使用</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>固定定位fixed</strong></td>
+<td align="left"><strong>完全脱标，不占有位置</strong></td>
+<td align="left"><strong>相对于浏览器可视区域移动位置</strong></td>
+<td align="left"><strong>能</strong></td>
+<td align="left"><strong>单独使用，不需要父级</strong></td>
+</tr>
+<tr>
+<td align="left">sticky粘性定位</td>
+<td align="left">否（占有位置）</td>
+<td align="left">浏览器可视区</td>
+<td align="left"></td>
+<td align="left">当前阶段少</td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong></p>
+<ol>
+<li><code>边偏移</code> 需要和 <code>定位模式</code> 联合使用，<code>单独使用无效</code>；</li>
+<li><code>top</code> 和 <code>bottom</code> 不要同时使用；</li>
+<li><code>left</code> 和 <code>right</code> 不要同时使用。</li>
+</ol>
+<h4 id="堆叠顺序（z-index）"><a href="#堆叠顺序（z-index）" class="headerlink" title="堆叠顺序（z-index）"></a>堆叠顺序（z-index）</h4><p>在使用<strong>「定位」</strong>布局时，可能会<strong>「出现盒子重叠的情况」</strong>。</p>
+<p>加了定位的盒子，默认<strong>「后来者居上」</strong>， 后面的盒子会压住前面的盒子。</p>
+<p>应用 <code>z-index</code> 层叠等级属性可以<strong>「调整盒子的堆叠顺序」</strong>。如下图所示：</p>
+<p>z-index的特性如下:</p>
+<ol>
+<li><strong>属性值</strong>：正整数、负整数或 0，默认值是 0，数值越大，盒子越靠上；</li>
+<li>如果属性值相同，则按照书写顺序，后来居上；</li>
+<li>数字后面不能加单位</li>
+<li>z-index只能用于相对定位、绝对定位和固定定位的元素，其他标准流、浮动和静态定位无效。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/28/%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/28/%E6%B5%AE%E5%8A%A8/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.</span> <span class="nav-text">定位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%88%B6%E5%85%83%E7%B4%A0%E6%9C%89%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">父元素有定位</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E5%8F%A3%E8%AF%80%E2%80%93%E5%AD%90%E7%BB%9D%E7%88%B6%E7%9B%B8"><span class="nav-number">1.0.0.1.1.</span> <span class="nav-text">定位口诀–子绝父相</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D%E5%B0%8F%E7%BB%93"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">定位小结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A0%86%E5%8F%A0%E9%A1%BA%E5%BA%8F%EF%BC%88z-index%EF%BC%89"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">堆叠顺序（z-index）</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">隐微</p>
+  <div class="site-description" itemprop="description">Blog学习分享</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">隐微</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

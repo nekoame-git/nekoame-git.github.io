@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nekoame-git.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Blog学习分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="隐微のBlog">
+<meta property="og:url" content="https://nekoame-git.github.io/page/2/index.html">
+<meta property="og:site_name" content="隐微のBlog">
+<meta property="og:description" content="Blog学习分享">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="隐微">
+<meta property="article:tag" content="233333">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://nekoame-git.github.io/page/2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>隐微のBlog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">隐微のBlog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nekoame-git.github.io/2021/09/23/CSS%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="隐微">
+      <meta itemprop="description" content="Blog学习分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隐微のBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/23/CSS%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">css背景设置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-09-23 22:56:09 / 修改时间：23:08:47" itemprop="dateCreated datePublished" datetime="2021-09-23T22:56:09+08:00">2021-09-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="CSS背景选择"><a href="#CSS背景选择" class="headerlink" title="CSS背景选择"></a><strong>CSS背景选择</strong></h2><h5 id="一、background-color-颜色值-设置背景颜色，默认transparent-透明色"><a href="#一、background-color-颜色值-设置背景颜色，默认transparent-透明色" class="headerlink" title="一、background-color: 颜色值       设置背景颜色，默认transparent(透明色)"></a>一、<strong>background-color:</strong> 颜色值       设置背景颜色，默认transparent(透明色)</h5><h5 id="二、background-image：none-url-用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。"><a href="#二、background-image：none-url-用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。" class="headerlink" title="二、background-image：none/url()   用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。"></a>二、<strong>background-image：none/url()</strong>   用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。</h5><h5 id="三、background-repeat：图片平铺（默认平铺）"><a href="#三、background-repeat：图片平铺（默认平铺）" class="headerlink" title="三、background-repeat：图片平铺（默认平铺）"></a>三、<strong>background-repeat：</strong>图片平铺（默认平铺）</h5><p>​    = repeat-x | repeat-y |  [repeat | no-repeat | space | round]{1,2}</p>
+<p>​    repeat-x： 背景图像在横向上平铺 </p>
+<p>​    repeat-y： 背景图像在纵向上平铺 </p>
+<p>​    repeat： 背景图像在横向和纵向平铺 </p>
+<p>​    no-repeat： 背景图像不平铺 </p>
+<p>​    round： 背景图像自动缩放直到适应且填充满整个容器。（CSS3） </p>
+<p>​    space： 背景图像以相同的间距平铺且填充满整个容器或某个方向。（CSS3）</p>
+<h5 id="四、background-position：x-y-设置图片在背景中的位置，方位名词可以使用两个值-不分顺序-，例如center-top（尽量）-若第二个省略，则默认为居中。"><a href="#四、background-position：x-y-设置图片在背景中的位置，方位名词可以使用两个值-不分顺序-，例如center-top（尽量）-若第二个省略，则默认为居中。" class="headerlink" title="四、background-position：x  y;**    设置图片在背景中的位置，方位名词可以使用两个值(不分顺序)，例如center top（尽量）;若第二个省略，则默认为居中。"></a><strong>四、background-position：x  y</strong>;**    设置图片在背景中的位置，方位名词可以使用两个值(不分顺序)，例如center top（尽量）;若第二个省略，则默认为居中。</h5><h6 id="1、方位名词："><a href="#1、方位名词：" class="headerlink" title="1、方位名词："></a>1、方位名词：</h6><p>​        percentage： 用百分比指定背景图像填充的位置。可以为负值。其参考的尺寸        为容器大小减去背景图片大小 </p>
+<p>​        length： 用长度值指定背景图像填充的位置。可以为负值。 </p>
+<p>​        center： 背景图像横向和纵向居中。 </p>
+<p>​        left： 背景图像在横向上填充从左边开始。 </p>
+<p>​        right： 背景图像在横向上填充从右边开始。 </p>
+<p>​        top： 背景图像在纵向上填充从顶部开始。 </p>
+<p>​        bottom： 背景图像在纵向上填充从底部开始。 </p>
+<h6 id="2、精确单位"><a href="#2、精确单位" class="headerlink" title="2、精确单位"></a>2、精确单位</h6><p>​        x和y均为相对左上角的坐标。第一个数值一定为x坐标，第二个不填则默认垂        直居中</p>
+<h6 id="3、混合坐标，第一个也一定为x坐标方向的位置"><a href="#3、混合坐标，第一个也一定为x坐标方向的位置" class="headerlink" title="3、混合坐标，第一个也一定为x坐标方向的位置"></a>3、混合坐标，第一个也一定为x坐标方向的位置</h6><h5 id="五、background-attachment：；背景图像固定（背景附着，不随滚动）"><a href="#五、background-attachment：；背景图像固定（背景附着，不随滚动）" class="headerlink" title="五、background-attachment：；背景图像固定（背景附着，不随滚动）"></a><strong>五、background-attachment</strong>：；背景图像固定（背景附着，不随滚动）</h5><p>​    fixed： 背景图像相对于窗体固定，不随着滚动。 </p>
+<p>​    scroll： 背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟    着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起    滚动。 </p>
+<p>​    local： 背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像    也会跟着滚动，因为背景图像总是要跟着内容。（CSS3） </p>
+<h5 id="六、背景属性复合写法（之间用空格分开）"><a href="#六、背景属性复合写法（之间用空格分开）" class="headerlink" title="六、背景属性复合写法（之间用空格分开）"></a>六、背景属性复合写法（之间用空格分开）</h5><p>规范写法：</p>
+<p>​    background: 背景颜色  背景图片地址  背景平铺   背景图像滚动   背景图片位置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background</span>: transparent <span class="built_in">url</span>() no-repeat fixed center top</span><br><span class="line">background:black <span class="built_in">url</span>(<span class="string">test1.jpg</span>) no-repeat scroll <span class="number">10px</span> <span class="number">20px</span> </span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="七、背景色半透明（盒子里的内容不受影响）"><a href="#七、背景色半透明（盒子里的内容不受影响）" class="headerlink" title="七、背景色半透明（盒子里的内容不受影响）"></a><strong>七、背景色半透明（盒子里的内容不受影响）</strong></h5><p>最后一个参数为alpha透明度，取值范围0~1之间</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(red, green, blue, alpha);</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS背景总结"><a href="#CSS背景总结" class="headerlink" title="CSS背景总结"></a><strong>CSS背景总结</strong></h3><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3992008468.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nekoame-git.github.io/2021/09/23/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="隐微">
+      <meta itemprop="description" content="Blog学习分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隐微のBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/23/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">css背景设置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-23 22:56:09" itemprop="dateCreated datePublished" datetime="2021-09-23T22:56:09+08:00">2021-09-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-28 23:27:02" itemprop="dateModified" datetime="2021-09-28T23:27:02+08:00">2021-09-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="CSS-三角形"><a href="#CSS-三角形" class="headerlink" title="CSS 三角形"></a><strong>CSS 三角形</strong></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">   <span class="attribute">width</span>: <span class="number">0</span>; </span><br><span class="line">   <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">line-height</span>:<span class="number">0</span>；</span><br><span class="line">   font-size: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">border-top</span>: <span class="number">10px</span> solid red;</span><br><span class="line">   <span class="attribute">border-right</span>: <span class="number">10px</span> solid green;</span><br><span class="line">   <span class="attribute">border-bottom</span>: <span class="number">10px</span> solid blue;</span><br><span class="line">   <span class="attribute">border-left</span>: <span class="number">10px</span> solid <span class="number">#000</span>; </span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>我们用css <strong>边框</strong>border可以模拟三角效果</li>
+<li>内容宽度高度为0</li>
+<li>我们4个边框都要写， 只保留需要的边框颜色，其余的不能省略，都改为 transparent 透明就好了</li>
+<li>为了照顾兼容性 低版本的浏览器，加上 font-size: 0;  line-height: 0;</li>
+</ol>
+<h3 id="CSS用户界面样式"><a href="#CSS用户界面样式" class="headerlink" title="CSS用户界面样式"></a><strong>CSS用户界面样式</strong></h3><p>所谓的界面样式， 就是更改一些用户操作样式，以便提高更好的用户体验。</p>
+<ul>
+<li>更改用户的鼠标样式</li>
+<li>表单轮廓等。</li>
+<li>防止表单域拖拽</li>
+</ul>
+<h4 id="2-1-鼠标样式"><a href="#2-1-鼠标样式" class="headerlink" title="2.1 鼠标样式"></a>2.1 鼠标样式</h4><p>设置或检索在对象上移动的鼠标指针采用何种系统预定义的光标形状。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">default</td>
+<td align="left">小白  默认</td>
+</tr>
+<tr>
+<td align="left">pointer</td>
+<td align="left">小手</td>
+</tr>
+<tr>
+<td align="left">move</td>
+<td align="left">移动</td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">文本</td>
+</tr>
+<tr>
+<td align="left">not-allowed</td>
+<td align="left">禁止</td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">ul</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">li</span> style=&quot;<span class="attribute">cursor</span><span class="selector-pseudo">:default</span>&quot;&gt;我是小白&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">li</span> style=&quot;<span class="attribute">cursor</span>:pointer<span class="string">&quot;&gt;我是小手&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li style=&quot;</span>cursor:move<span class="string">&quot;&gt;我是移动&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li style=&quot;</span>cursor:text<span class="string">&quot;&gt;我是文本&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;li style=&quot;</span>cursor:not-allowed<span class="string">&quot;&gt;我是文本&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-轮廓线-outline"><a href="#2-2-轮廓线-outline" class="headerlink" title="2.2 轮廓线 outline"></a>2.2 轮廓线 outline</h4><p>是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">outline</span> : outline-color ||outline-style || outline-width </span><br></pre></td></tr></table></figure>
+
+<p><strong>一般为消除表单的轮廓线</strong><br>最直接的写法是 ： outline: 0;  或者  outline: none;</p>
+<h4 id="2-3-防止拖拽文本域resize"><a href="#2-3-防止拖拽文本域resize" class="headerlink" title="2.3 防止拖拽文本域resize"></a>2.3 防止拖拽文本域resize</h4><p>![图片](../images/CSS 三角形/640.webp)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">textarea</span>  style=&quot;<span class="attribute">resize</span>: none;&quot;&gt;&lt;/<span class="selector-tag">textarea</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-用户界面样式总结"><a href="#2-4-用户界面样式总结" class="headerlink" title="2.4 用户界面样式总结"></a>2.4 用户界面样式总结</h4><table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">用途</th>
+<th align="left">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">鼠标样式</td>
+<td align="left">更改鼠标样式cursor</td>
+<td align="left">样式很多，重点记住 pointer</td>
+</tr>
+<tr>
+<td align="left">轮廓线</td>
+<td align="left">表单默认outline</td>
+<td align="left">outline 轮廓线，我们一般直接去掉，border是边框，我们会经常用</td>
+</tr>
+<tr>
+<td align="left">防止拖拽</td>
+<td align="left">主要针对文本域resize</td>
+<td align="left">防止用户随意拖拽文本域，造成页面布局混乱，我们resize:none</td>
+</tr>
+</tbody></table>
+<h2 id="vertical-align-垂直对齐"><a href="#vertical-align-垂直对齐" class="headerlink" title="vertical-align 垂直对齐"></a>vertical-align 垂直对齐</h2><ul>
+<li>有宽度的块级元素居中对齐，是margin: 0 auto;</li>
+<li>让文字居中对齐，是 text-align: center;</li>
+</ul>
+<p>vertical-align 垂直对齐，它只针对于<strong>「行内元素」</strong>或者<strong>「行内块元素」</strong></p>
+<p><img src="../images/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/%E5%AD%97%E4%BD%93%E7%BA%BF.jpg"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">设置或检索对象内容的垂直对其方式。</span><br><span class="line"><span class="attribute">vertical-align</span> : baseline 基线|top 顶线 |middle中线 |bottom 底线</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>vertical-align 不影响块级元素中的内容对齐，它只针对于整体<strong>「行内元素」</strong>或者<strong>「行内块元素」</strong>，</p>
+<p>特别是行内块元素， 通常用来控制图片/表单与文字的对齐。</p>
+<h4 id="3-1-图片、表单和文字对齐"><a href="#3-1-图片、表单和文字对齐" class="headerlink" title="3.1 图片、表单和文字对齐"></a>3.1 图片、表单和文字对齐</h4><p>我们可以通过<code>vertical-align</code> 控制图片和文字的垂直关系了。默认的图片会和文字基线对齐。</p>
+<p><img src="../images/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/vertical-align.jpg" alt="图片"></p>
+<h4 id="3-2-去图片底侧空白缝隙"><a href="#3-2-去图片底侧空白缝隙" class="headerlink" title="3.2 去图片底侧空白缝隙"></a>3.2 去图片底侧空白缝隙</h4><p><strong>原因：</strong>图片或者表单等行内块元素，他的底线会和父级盒子的基线对齐。</p>
+<p>就是图片底侧会有一个空白缝隙。</p>
+<p><strong>解决方法：</strong></p>
+<ul>
+<li><p>给img  vertical-align:middle | top| bottom等等。 让图片不要和基线对齐。</p>
+</li>
+<li><p>给img 添加 display：block; 转换为块级元素就不会存在问题了。</p>
+</li>
+</ul>
+<h3 id="溢出的文字省略号显示"><a href="#溢出的文字省略号显示" class="headerlink" title="溢出的文字省略号显示"></a>溢出的文字省略号显示</h3><h4 id="4-1-white-space"><a href="#4-1-white-space" class="headerlink" title="4.1 white-space"></a>4.1 white-space</h4><ul>
+<li>white-space设置或检索对象内文本显示方式。通常我们使用于强制一行显示内容</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">white-space</span>:normal ；默认处理方式</span><br><span class="line"></span><br><span class="line">white-space:nowrap ； 强制在同一行内显示所有文本，直到文本结束或者遭遇br标签对象才换行。</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-text-overflow-文字溢出"><a href="#4-2-text-overflow-文字溢出" class="headerlink" title="4.2 text-overflow 文字溢出"></a>4.2 text-overflow 文字溢出</h4><ul>
+<li>设置或检索是否使用一个省略标记（…）标示对象内文本的溢出</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">text-overflow</span> : clip ；不显示省略标记（...），而是简单的裁切 </span><br><span class="line"></span><br><span class="line">text-overflow：ellipsis ； 当对象内文本溢出时显示省略标记（...）</span><br></pre></td></tr></table></figure>
+
+<p><strong>「注意」</strong>：</p>
+<p>一定要首先强制一行内显示，再次和overflow属性  搭配使用</p>
+<h4 id="4-3-总结三步曲"><a href="#4-3-总结三步曲" class="headerlink" title="4.3 总结三步曲"></a>4.3 总结三步曲</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*1. 先强制一行内显示文本*/</span></span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line"><span class="comment">/*2. 超出的部分隐藏*/</span></span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line"><span class="comment">/*3. 文字用省略号替代超出的部分*/</span></span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nekoame-git.github.io/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="隐微">
+      <meta itemprop="description" content="Blog学习分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隐微のBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/" class="post-title-link" itemprop="url">复合选择器笔记（思维导图）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-22 23:18:18" itemprop="dateCreated datePublished" datetime="2021-09-22T23:18:18+08:00">2021-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-23 23:09:45" itemprop="dateModified" datetime="2021-09-23T23:09:45+08:00">2021-09-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3362048325.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nekoame-git.github.io/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="隐微">
+      <meta itemprop="description" content="Blog学习分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隐微のBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">元素显示模式笔记（思维导图）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-22 23:11:18" itemprop="dateCreated datePublished" datetime="2021-09-22T23:11:18+08:00">2021-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-23 23:11:32" itemprop="dateModified" datetime="2021-09-23T23:11:32+08:00">2021-09-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/1802855579.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nekoame-git.github.io/2021/09/21/Emmet%E8%AF%AD%E6%B3%95%EF%BC%88vscode%E8%87%AA%E5%B8%A6%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="隐微">
+      <meta itemprop="description" content="Blog学习分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="隐微のBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/21/Emmet%E8%AF%AD%E6%B3%95%EF%BC%88vscode%E8%87%AA%E5%B8%A6%EF%BC%89/" class="post-title-link" itemprop="url">Emmet语法学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-09-21 00:25:18 / 修改时间：01:06:32" itemprop="dateCreated datePublished" datetime="2021-09-21T00:25:18+08:00">2021-09-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Emmet语法（vscode自带）"><a href="#Emmet语法（vscode自带）" class="headerlink" title="Emmet语法（vscode自带）"></a>Emmet语法（vscode自带）</h1><h2 id="一、快速生成HTML结构语法"><a href="#一、快速生成HTML结构语法" class="headerlink" title="一、快速生成HTML结构语法"></a>一、快速生成HTML结构语法</h2><p>1、生成标签，输入div 按tab键，快速生成标签</p>
+<p>2、div*5 生成5个div标签</p>
+<p>3、父子级关系标签用&gt; ，    如ul&gt;li</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>4、兄弟（并列）关系用+，如div+p</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>5、生成带类名和id的标签直接写id（默认div标签）如.demo或#demo    </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.id </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">#demo</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">p.demo	指定标签则前面加上限制标签即可</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">ul&gt;li.demo</span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>6、使用$自增符号，生成多个有顺序的类名</p>
+<p>（应该是把$符号变为对应数字</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p.demo$*5</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>7、用{}中输入，指定标签中的文本内容</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div&#123;text&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">div&#123;text$&#125;*5</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、快速生成CSS结构语法"><a href="#二、快速生成CSS结构语法" class="headerlink" title="二、快速生成CSS结构语法"></a>二、快速生成CSS结构语法</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入tac补全成<span class="attribute">text-align</span>: center;</span><br><span class="line">输入ti补全成<span class="attribute">text-indent</span>: ;</span><br><span class="line">输入w100补全成<span class="attribute">width</span>: <span class="number">100px</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">隐微</p>
+  <div class="site-description" itemprop="description">Blog学习分享</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">隐微</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
