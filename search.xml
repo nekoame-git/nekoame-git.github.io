@@ -348,6 +348,24 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/11/28/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Emmet语法学习</title>
     <url>/2021/09/21/Emmet%E8%AF%AD%E6%B3%95%EF%BC%88vscode%E8%87%AA%E5%B8%A6%EF%BC%89/</url>
     <content><![CDATA[<h1 id="Emmet语法（vscode自带）"><a href="#Emmet语法（vscode自带）" class="headerlink" title="Emmet语法（vscode自带）"></a>Emmet语法（vscode自带）</h1><h2 id="一、快速生成HTML结构语法"><a href="#一、快速生成HTML结构语法" class="headerlink" title="一、快速生成HTML结构语法"></a>一、快速生成HTML结构语法</h2><p>1、生成标签，输入div 按tab键，快速生成标签</p>
@@ -1210,24 +1228,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/11/28/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>元素显示模式笔记（思维导图）</title>
     <url>/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/1802855579.png"></p>
@@ -1321,6 +1321,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>复合选择器笔记（思维导图）</title>
+    <url>/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3362048325.png"></p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>笔记</tag>
+        <tag>思维导图</tag>
+        <tag>复合选择器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title></title>
     <url>/2021/11/28/%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/</url>
     <content><![CDATA[<h2 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a><strong>圆角边框</strong></h2><p>border-radius: length;</p>
@@ -1374,18 +1386,6 @@
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* box-shadow:水平位置 垂直位置 模糊距离 阴影尺寸（影子大小） 阴影颜色  内/外阴影； */</span></span><br><span class="line">   <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">15px</span> <span class="number">30px</span>  <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">4</span>);   </span><br></pre></td></tr></table></figure>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>复合选择器笔记（思维导图）</title>
-    <url>/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3362048325.png"></p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>笔记</tag>
-        <tag>思维导图</tag>
-        <tag>复合选择器</tag>
-      </tags>
   </entry>
   <entry>
     <title></title>
@@ -1564,6 +1564,100 @@
   </entry>
   <entry>
     <title></title>
+    <url>/2021/11/28/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>清除浮动的方法</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">选择器 &#123; <span class="attribute">clear</span>: 属性值; &#125;   <span class="attribute">clear</span> 清除  </span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">属性值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">left</td>
+<td align="left">不允许左侧有浮动元素（清除左侧浮动的影响）</td>
+</tr>
+<tr>
+<td align="left">right</td>
+<td align="left">不允许右侧有浮动元素（清除右侧浮动的影响）</td>
+</tr>
+<tr>
+<td align="left">both</td>
+<td align="left">同时清除左右两侧浮动的影响</td>
+</tr>
+</tbody></table>
+<p>实际工作中,几乎只用clear: both</p>
+<p><strong>1).额外标签法(隔墙法，W3C推荐的做法)</strong></p>
+<p>​    通过在浮动元素末尾添加一个空的标签，阻挡后面的浮动标签，例如 <div style="clear:both"></div>，或则其他标签br等亦可。</p>
+<p>​    <strong>墙必须是块级元素，不能是行内元素。</strong></p>
+<p>​    阻挡后父盒子有高度，孩子有多高则高度为多少。</p>
+<ul>
+<li>优点：通俗易懂，书写方便</li>
+<li>缺点：添加许多无意义的标签，结构化较差。</li>
+</ul>
+<p><strong>2).父级添加overflow属性方法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">可以给父级添加： overflow为 hidden| auto| scroll  都可以实现。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>优点： 代码简洁</li>
+<li>缺点： 内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素。</li>
+</ul>
+<p><strong>3).使用after伪元素清除浮动</strong>:after 方式为空元素额外标签法的升级版，<strong>给父标签添加</strong>，好处是不用单独加标签了</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">写法复制 <span class="selector-class">.clearfix</span>:after &#123;	在父元素内部后面添加了个盒子，</span><br><span class="line">        content: <span class="string">&quot;&quot;</span>;		不需要在子盒子一起单独多加标签了</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">clear</span>: both;</span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">/* IE6、7 专有 */</span></span><br><span class="line">    <span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">        *zoom: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>优点：符合闭合浮动思想  结构语义化正确</li>
+<li>缺点：由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</li>
+</ul>
+<p><strong>4).使用双伪元素清除浮动</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span>:before,</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">    content: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clearfix</span>:after &#123;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">   *zoom: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>优点： 代码更简洁，代表网站：小米，腾讯</li>
+<li>缺点： 由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</li>
+</ul>
+<h4 id="清除浮动总结"><a href="#清除浮动总结" class="headerlink" title="清除浮动总结"></a>清除浮动总结</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">什么时候用清除浮动呢？</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>父级没高度</li>
+<li>子盒子浮动了</li>
+<li>影响下面布局了，我们就应该清除浮动了。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">清除浮动的方式</th>
+<th align="left">优点</th>
+<th align="left">缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">额外标签法（隔墙法）</td>
+<td align="left">通俗易懂，书写方便</td>
+<td align="left">添加许多无意义的标签，结构化较差。</td>
+</tr>
+<tr>
+<td align="left">父级overflow:hidden;</td>
+<td align="left">书写简单</td>
+<td align="left">溢出隐藏</td>
+</tr>
+<tr>
+<td align="left">父级after伪元素</td>
+<td align="left">结构语义化正确</td>
+<td align="left">由于IE6-7不支持:after，兼容性问题</td>
+</tr>
+<tr>
+<td align="left">父级双伪元素</td>
+<td align="left">结构语义化正确</td>
+<td align="left">由于IE6-7不支持:after，兼容性问题</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/2021/11/28/%E6%B5%AE%E5%8A%A8/</url>
     <content><![CDATA[<p>CSS 提供了3种机制来设置盒子的摆放位置，分别是普通流（标准流）、浮动和定位，其中：</p>
 <p><strong>A. 普通流（标准流）</strong></p>
@@ -1672,100 +1766,6 @@
 </tr>
 </tbody></table>
 <p>实际工作中,几乎只用clear: both</p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2021/11/28/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>清除浮动的方法</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">选择器 &#123; <span class="attribute">clear</span>: 属性值; &#125;   <span class="attribute">clear</span> 清除  </span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th align="left">属性值</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">left</td>
-<td align="left">不允许左侧有浮动元素（清除左侧浮动的影响）</td>
-</tr>
-<tr>
-<td align="left">right</td>
-<td align="left">不允许右侧有浮动元素（清除右侧浮动的影响）</td>
-</tr>
-<tr>
-<td align="left">both</td>
-<td align="left">同时清除左右两侧浮动的影响</td>
-</tr>
-</tbody></table>
-<p>实际工作中,几乎只用clear: both</p>
-<p><strong>1).额外标签法(隔墙法，W3C推荐的做法)</strong></p>
-<p>​    通过在浮动元素末尾添加一个空的标签，阻挡后面的浮动标签，例如 <div style="clear:both"></div>，或则其他标签br等亦可。</p>
-<p>​    <strong>墙必须是块级元素，不能是行内元素。</strong></p>
-<p>​    阻挡后父盒子有高度，孩子有多高则高度为多少。</p>
-<ul>
-<li>优点：通俗易懂，书写方便</li>
-<li>缺点：添加许多无意义的标签，结构化较差。</li>
-</ul>
-<p><strong>2).父级添加overflow属性方法</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">可以给父级添加： overflow为 hidden| auto| scroll  都可以实现。</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>优点： 代码简洁</li>
-<li>缺点： 内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素。</li>
-</ul>
-<p><strong>3).使用after伪元素清除浮动</strong>:after 方式为空元素额外标签法的升级版，<strong>给父标签添加</strong>，好处是不用单独加标签了</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">写法复制 <span class="selector-class">.clearfix</span>:after &#123;	在父元素内部后面添加了个盒子，</span><br><span class="line">        content: <span class="string">&quot;&quot;</span>;		不需要在子盒子一起单独多加标签了</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">clear</span>: both;</span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">/* IE6、7 专有 */</span></span><br><span class="line">    <span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">        *zoom: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>优点：符合闭合浮动思想  结构语义化正确</li>
-<li>缺点：由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</li>
-</ul>
-<p><strong>4).使用双伪元素清除浮动</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span>:before,</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">    content: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clearfix</span>:after &#123;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">   *zoom: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>优点： 代码更简洁，代表网站：小米，腾讯</li>
-<li>缺点： 由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</li>
-</ul>
-<h4 id="清除浮动总结"><a href="#清除浮动总结" class="headerlink" title="清除浮动总结"></a>清除浮动总结</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">什么时候用清除浮动呢？</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>父级没高度</li>
-<li>子盒子浮动了</li>
-<li>影响下面布局了，我们就应该清除浮动了。</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="left">清除浮动的方式</th>
-<th align="left">优点</th>
-<th align="left">缺点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">额外标签法（隔墙法）</td>
-<td align="left">通俗易懂，书写方便</td>
-<td align="left">添加许多无意义的标签，结构化较差。</td>
-</tr>
-<tr>
-<td align="left">父级overflow:hidden;</td>
-<td align="left">书写简单</td>
-<td align="left">溢出隐藏</td>
-</tr>
-<tr>
-<td align="left">父级after伪元素</td>
-<td align="left">结构语义化正确</td>
-<td align="left">由于IE6-7不支持:after，兼容性问题</td>
-</tr>
-<tr>
-<td align="left">父级双伪元素</td>
-<td align="left">结构语义化正确</td>
-<td align="left">由于IE6-7不支持:after，兼容性问题</td>
-</tr>
-</tbody></table>
 ]]></content>
   </entry>
   <entry>
