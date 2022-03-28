@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>/2021/11/28/CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h1 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h1><h2 id="一、层叠性"><a href="#一、层叠性" class="headerlink" title="一、层叠性"></a>一、层叠性</h2><p>​    样式冲突，遵循就近原则，执行样式离结构近的</p>
+<p>​    样式不冲突则不层叠</p>
+<h2 id="二、继承性"><a href="#二、继承性" class="headerlink" title="二、继承性"></a>二、继承性</h2><p>子标签会继承父标签的某些样式，如文本颜色和字号</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span>	&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span>&gt;</span><br><span class="line">     &lt;<span class="selector-tag">p</span>&gt;继承<span class="selector-tag">div</span>的样式，变为红色&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>恰当使用继承可以简化代码，降低CSS的复杂性</p>
+<p>子元素可以继承父元素的样式 （<strong>text-，font-，line-等开头的元素可以继承，以及color属性</strong>）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">24px</span>;	<span class="number">12</span>为字号，<span class="number">24</span>为行高</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">1.5</span>;		</span><br><span class="line">    <span class="comment">/*不跟单位时候，1.5则表示子元素div的行高*1.5倍，即10*1.5px=15px*/</span></span><br><span class="line">    行高使用倍数方便子元素根据字体大小自动调整行高</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span>&gt;继承<span class="selector-tag">body</span>行高，<span class="number">1.5</span>*<span class="number">10</span>=<span class="number">15px</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">ul</span>&gt;</span><br><span class="line">		&lt;/<span class="selector-tag">li</span>&gt;<span class="selector-tag">li</span>继承父类的大小行高，父类<span class="selector-tag">ul</span>未指定则再上一层<span class="selector-tag">body</span>，而<span class="selector-tag">body</span>的字体大小为<span class="number">12</span>，行高<span class="number">1.5</span>，则行高最后为当前文字大小的<span class="number">1.5</span>倍，则为<span class="number">12px</span>*<span class="number">1.5</span>=<span class="number">18px</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">	&lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、优先级"><a href="#三、优先级" class="headerlink" title="三、优先级"></a>三、优先级</h2><p>选择器权重</p>
+<table>
+<thead>
+<tr>
+<th align="left">标签选择器</th>
+<th align="left">计算权重公式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">继承或者 *</td>
+<td align="left">0,0,0,0</td>
+</tr>
+<tr>
+<td align="left">每个元素（标签选择器）</td>
+<td align="left">0,0,0,1</td>
+</tr>
+<tr>
+<td align="left">每个类，伪类</td>
+<td align="left">0,0,1,0</td>
+</tr>
+<tr>
+<td align="left">每个ID</td>
+<td align="left">0,1,0,0</td>
+</tr>
+<tr>
+<td align="left">每个行内样式 style=””</td>
+<td align="left">1,0,0,0</td>
+</tr>
+<tr>
+<td align="left">每个!important  最重要的</td>
+<td align="left">∞ 无穷大</td>
+</tr>
+</tbody></table>
+<p>值从左到右，左面的最大，一级大于一级，数位之间没有进制（会加到0,0,0,7也不会有进位），级别之间不可超越。</p>
+<p>关于CSS权重，我们需要一套计算公式来去计算，这个就是 CSS Specificity（特殊性）</p>
+<p>div { color: pink !important; }</p>
+<p>注意权重对应的<strong>对象</strong>是谁，有可能对于这个标签来说其实是继承。</p>
+<p>不管父元素的权重多高，子元素得到的权重都只是继承而已。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="selector-class">.test</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">div</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink<span class="meta">!important</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-id">#demo</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;test&quot; id=&quot;demo&quot; style=&quot;<span class="attribute">color</span>: purple<span class="string">&quot;&gt;你笑起来真好看&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>权重叠加：</strong>（如果是复合选择器，则会有权重叠加）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">ul</span>  <span class="selector-tag">li</span>   ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>	三个标签选择器权重相加</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>   ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>	</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>      -----—&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>	伪类 加 标签</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">a</span>       ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>	</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="comment">/* .nav li  权重是 11 */</span></span><br><span class="line">        <span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 需求把第一个小li 颜色改为 粉色加粗 ? */</span></span><br><span class="line">        <span class="comment">/* .pink  权重是 10  */</span></span><br><span class="line">       <span class="selector-class">.nav</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink;</span><br><span class="line">            <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;  </span><br><span class="line">    &lt;<span class="selector-tag">ul</span> class=&quot;<span class="selector-tag">nav</span>&quot;&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span> class=&quot;pink&quot;&gt;人生四大悲&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;家里没宽带&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;网速不够快&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;手机没流量&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;学校没wifi&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">    &lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里.nav未产生继承，因为.nav后面加了li，所以直接选择了li元素，所以.nav算为类的权重</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Bootstrap学习笔记</title>
     <url>/2021/11/28/Bootstrap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="Bootstrap学习笔记"><a href="#Bootstrap学习笔记" class="headerlink" title="Bootstrap学习笔记"></a>Bootstrap学习笔记</h1><h2 id="一、栅格系统"><a href="#一、栅格系统" class="headerlink" title="一、栅格系统"></a>一、栅格系统</h2><p>通过一系列的行(row)与列(column)的组合来创建页面布局，按照不同尺寸屏幕分为1~12份</p>
@@ -135,67 +196,6 @@
         <tag>前端</tag>
         <tag>笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2021/11/28/CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<h1 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h1><h2 id="一、层叠性"><a href="#一、层叠性" class="headerlink" title="一、层叠性"></a>一、层叠性</h2><p>​    样式冲突，遵循就近原则，执行样式离结构近的</p>
-<p>​    样式不冲突则不层叠</p>
-<h2 id="二、继承性"><a href="#二、继承性" class="headerlink" title="二、继承性"></a>二、继承性</h2><p>子标签会继承父标签的某些样式，如文本颜色和字号</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span>	&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span>&gt;</span><br><span class="line">     &lt;<span class="selector-tag">p</span>&gt;继承<span class="selector-tag">div</span>的样式，变为红色&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<p>恰当使用继承可以简化代码，降低CSS的复杂性</p>
-<p>子元素可以继承父元素的样式 （<strong>text-，font-，line-等开头的元素可以继承，以及color属性</strong>）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">24px</span>;	<span class="number">12</span>为字号，<span class="number">24</span>为行高</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">1.5</span>;		</span><br><span class="line">    <span class="comment">/*不跟单位时候，1.5则表示子元素div的行高*1.5倍，即10*1.5px=15px*/</span></span><br><span class="line">    行高使用倍数方便子元素根据字体大小自动调整行高</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span>&gt;继承<span class="selector-tag">body</span>行高，<span class="number">1.5</span>*<span class="number">10</span>=<span class="number">15px</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">ul</span>&gt;</span><br><span class="line">		&lt;/<span class="selector-tag">li</span>&gt;<span class="selector-tag">li</span>继承父类的大小行高，父类<span class="selector-tag">ul</span>未指定则再上一层<span class="selector-tag">body</span>，而<span class="selector-tag">body</span>的字体大小为<span class="number">12</span>，行高<span class="number">1.5</span>，则行高最后为当前文字大小的<span class="number">1.5</span>倍，则为<span class="number">12px</span>*<span class="number">1.5</span>=<span class="number">18px</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">	&lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、优先级"><a href="#三、优先级" class="headerlink" title="三、优先级"></a>三、优先级</h2><p>选择器权重</p>
-<table>
-<thead>
-<tr>
-<th align="left">标签选择器</th>
-<th align="left">计算权重公式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">继承或者 *</td>
-<td align="left">0,0,0,0</td>
-</tr>
-<tr>
-<td align="left">每个元素（标签选择器）</td>
-<td align="left">0,0,0,1</td>
-</tr>
-<tr>
-<td align="left">每个类，伪类</td>
-<td align="left">0,0,1,0</td>
-</tr>
-<tr>
-<td align="left">每个ID</td>
-<td align="left">0,1,0,0</td>
-</tr>
-<tr>
-<td align="left">每个行内样式 style=””</td>
-<td align="left">1,0,0,0</td>
-</tr>
-<tr>
-<td align="left">每个!important  最重要的</td>
-<td align="left">∞ 无穷大</td>
-</tr>
-</tbody></table>
-<p>值从左到右，左面的最大，一级大于一级，数位之间没有进制（会加到0,0,0,7也不会有进位），级别之间不可超越。</p>
-<p>关于CSS权重，我们需要一套计算公式来去计算，这个就是 CSS Specificity（特殊性）</p>
-<p>div { color: pink !important; }</p>
-<p>注意权重对应的<strong>对象</strong>是谁，有可能对于这个标签来说其实是继承。</p>
-<p>不管父元素的权重多高，子元素得到的权重都只是继承而已。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="selector-class">.test</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">div</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink<span class="meta">!important</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-id">#demo</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;test&quot; id=&quot;demo&quot; style=&quot;<span class="attribute">color</span>: purple<span class="string">&quot;&gt;你笑起来真好看&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>权重叠加：</strong>（如果是复合选择器，则会有权重叠加）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">ul</span>  <span class="selector-tag">li</span>   ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>	三个标签选择器权重相加</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>   ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>	</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>      -----—&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>	伪类 加 标签</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">a</span>       ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>	</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="comment">/* .nav li  权重是 11 */</span></span><br><span class="line">        <span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 需求把第一个小li 颜色改为 粉色加粗 ? */</span></span><br><span class="line">        <span class="comment">/* .pink  权重是 10  */</span></span><br><span class="line">       <span class="selector-class">.nav</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink;</span><br><span class="line">            <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;  </span><br><span class="line">    &lt;<span class="selector-tag">ul</span> class=&quot;<span class="selector-tag">nav</span>&quot;&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span> class=&quot;pink&quot;&gt;人生四大悲&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;家里没宽带&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;网速不够快&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;手机没流量&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;学校没wifi&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">    &lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>这里.nav未产生继承，因为.nav后面加了li，所以直接选择了li元素，所以.nav算为类的权重</strong></p>
-]]></content>
   </entry>
   <entry>
     <title>css背景设置</title>
@@ -348,24 +348,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/11/28/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Emmet语法学习</title>
     <url>/2021/09/21/Emmet%E8%AF%AD%E6%B3%95%EF%BC%88vscode%E8%87%AA%E5%B8%A6%EF%BC%89/</url>
     <content><![CDATA[<h1 id="Emmet语法（vscode自带）"><a href="#Emmet语法（vscode自带）" class="headerlink" title="Emmet语法（vscode自带）"></a>Emmet语法（vscode自带）</h1><h2 id="一、快速生成HTML结构语法"><a href="#一、快速生成HTML结构语法" class="headerlink" title="一、快速生成HTML结构语法"></a>一、快速生成HTML结构语法</h2><p>1、生成标签，输入div 按tab键，快速生成标签</p>
@@ -396,6 +378,91 @@
         <tag>笔记</tag>
         <tag>Emmet语法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/11/28/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>元素显示模式笔记（思维导图）</title>
+    <url>/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/1802855579.png"></p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>笔记</tag>
+        <tag>元素显示模式</tag>
+        <tag>思维导图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/11/28/%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/</url>
+    <content><![CDATA[<h2 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a><strong>圆角边框</strong></h2><p>border-radius: length;</p>
+<p>border-top-left-radius  定义了左上角的弧度<br>border-top-right-radius  定义了右上角的弧度<br>border-bottom-right-radius  定义了右下角的弧度<br>border-bottom-left-radius  定义了左下角的弧度</p>
+<p><strong>border-radius: 左上角 右上角 右下角 左下角;</strong></p>
+<ol>
+<li>四个值: 第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角。</li>
+<li>三个值: 第一个值为左上角, 第二个值为右上角和左下角，第三个值为右下角</li>
+<li>两个值: 第一个值为左上角与右下角，第二个值为右上角与左下角</li>
+<li>一个值：四个圆角值相同</li>
+</ol>
+<p>其中每一个值可以为 数值或百分比的形式。</p>
+<p>技巧：让一个正方形 变成圆圈，圆角矩形也同理。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">border-radius</span>: <span class="number">50%</span>; <span class="comment">/*或者是正方形的边长一半*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="盒子阴影（box-shadow）"><a href="#盒子阴影（box-shadow）" class="headerlink" title="盒子阴影（box-shadow）"></a>盒子阴影（box-shadow）</h2><p><strong>阴影不占用空间，不影响其他盒子排列</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">box-shadow</span>: offset-x offset-y [blur [spread]] [color] [inset]</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">offset-x</td>
+<td align="left">阴影的水平偏移量。正数向右偏移，负数向左偏移。</td>
+</tr>
+<tr>
+<td align="left">offset-y</td>
+<td align="left">阴影的垂直偏移量。正数向下偏移，负数向上偏移。</td>
+</tr>
+<tr>
+<td align="left">blur</td>
+<td align="left">可选。阴影模糊距离，越大越影子模糊，不能取负数。</td>
+</tr>
+<tr>
+<td align="left">spread</td>
+<td align="left">可选。阴影大小</td>
+</tr>
+<tr>
+<td align="left">color</td>
+<td align="left">可选。阴影的颜色</td>
+</tr>
+<tr>
+<td align="left">inset</td>
+<td align="left">可选。表示添加内阴影，默认为外阴影，（不可以写outset）</td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* box-shadow:水平位置 垂直位置 模糊距离 阴影尺寸（影子大小） 阴影颜色  内/外阴影； */</span></span><br><span class="line">   <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">15px</span> <span class="number">30px</span>  <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">4</span>);   </span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>js基础知识笔记</title>
@@ -1228,18 +1295,6 @@
       </tags>
   </entry>
   <entry>
-    <title>元素显示模式笔记（思维导图）</title>
-    <url>/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/1802855579.png"></p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>笔记</tag>
-        <tag>元素显示模式</tag>
-        <tag>思维导图</tag>
-      </tags>
-  </entry>
-  <entry>
     <title></title>
     <url>/2021/11/28/%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/</url>
     <content><![CDATA[<h1 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h1><h4 id="1-1-display-显示（重点）"><a href="#1-1-display-显示（重点）" class="headerlink" title="1.1 display 显示（重点）"></a>1.1 display 显示（重点）</h4><p>display设置或检索对象是否显示或如何显示。</p>
@@ -1331,61 +1386,6 @@
         <tag>思维导图</tag>
         <tag>复合选择器</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2021/11/28/%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/</url>
-    <content><![CDATA[<h2 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a><strong>圆角边框</strong></h2><p>border-radius: length;</p>
-<p>border-top-left-radius  定义了左上角的弧度<br>border-top-right-radius  定义了右上角的弧度<br>border-bottom-right-radius  定义了右下角的弧度<br>border-bottom-left-radius  定义了左下角的弧度</p>
-<p><strong>border-radius: 左上角 右上角 右下角 左下角;</strong></p>
-<ol>
-<li>四个值: 第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角。</li>
-<li>三个值: 第一个值为左上角, 第二个值为右上角和左下角，第三个值为右下角</li>
-<li>两个值: 第一个值为左上角与右下角，第二个值为右上角与左下角</li>
-<li>一个值：四个圆角值相同</li>
-</ol>
-<p>其中每一个值可以为 数值或百分比的形式。</p>
-<p>技巧：让一个正方形 变成圆圈，圆角矩形也同理。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">border-radius</span>: <span class="number">50%</span>; <span class="comment">/*或者是正方形的边长一半*/</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="盒子阴影（box-shadow）"><a href="#盒子阴影（box-shadow）" class="headerlink" title="盒子阴影（box-shadow）"></a>盒子阴影（box-shadow）</h2><p><strong>阴影不占用空间，不影响其他盒子排列</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">box-shadow</span>: offset-x offset-y [blur [spread]] [color] [inset]</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th align="left">值</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">offset-x</td>
-<td align="left">阴影的水平偏移量。正数向右偏移，负数向左偏移。</td>
-</tr>
-<tr>
-<td align="left">offset-y</td>
-<td align="left">阴影的垂直偏移量。正数向下偏移，负数向上偏移。</td>
-</tr>
-<tr>
-<td align="left">blur</td>
-<td align="left">可选。阴影模糊距离，越大越影子模糊，不能取负数。</td>
-</tr>
-<tr>
-<td align="left">spread</td>
-<td align="left">可选。阴影大小</td>
-</tr>
-<tr>
-<td align="left">color</td>
-<td align="left">可选。阴影的颜色</td>
-</tr>
-<tr>
-<td align="left">inset</td>
-<td align="left">可选。表示添加内阴影，默认为外阴影，（不可以写outset）</td>
-</tr>
-</tbody></table>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* box-shadow:水平位置 垂直位置 模糊距离 阴影尺寸（影子大小） 阴影颜色  内/外阴影； */</span></span><br><span class="line">   <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">15px</span> <span class="number">30px</span>  <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">4</span>);   </span><br></pre></td></tr></table></figure>
-
-]]></content>
   </entry>
   <entry>
     <title></title>
@@ -1657,6 +1657,53 @@
 ]]></content>
   </entry>
   <entry>
+    <title>清除元素的默认内外边距</title>
+    <url>/2021/11/28/%E7%9B%B8%E9%82%BB%E5%9D%97%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6/</url>
+    <content><![CDATA[<p><strong>清除元素的默认内外边距👇👇</strong></p>
+<ul>
+<li>行内元素为了照顾兼容性,尽量只设置左右内外边距，不要设置上下内外边距。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">padding</span>:<span class="number">0</span>;         <span class="comment">/* 清除内边距 */</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">0</span>;          <span class="comment">/* 清除外边距 */</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>使用margin定义块元素的<strong>「垂直外边距」</strong>时，可能会出现外边距的合并。</p>
+<h6 id="1-相邻块元素垂直外边距的合并"><a href="#1-相邻块元素垂直外边距的合并" class="headerlink" title="(1). 相邻块元素垂直外边距的合并"></a>(1). 相邻块元素垂直外边距的合并</h6><ul>
+<li>当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom</li>
+<li>下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和</li>
+<li><strong>「取两个值中的较大者」</strong>这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/y7EkeCWAzmqtcdL7HZYccBic0jicaWzR8b15wO9U7G1QHGZRB5OIsdJaCdPeg7MzVYtTsbhfGPusK7OCOwWtvs4A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><strong>「解决方案：尽量给只给一个盒子添加margin值」</strong>。</p>
+<h4 id="2-嵌套块元素垂直外边距的合并（塌陷）"><a href="#2-嵌套块元素垂直外边距的合并（塌陷）" class="headerlink" title="(2). 嵌套块元素垂直外边距的合并（塌陷）"></a>(2). 嵌套块元素垂直外边距的合并（塌陷）</h4><ul>
+<li>对于两个嵌套关系的块元素，如果父元素没有上内边距及边框</li>
+<li>父元素的上外边距会与子元素的上外边距发生合并</li>
+<li>合并后的外边距为两者中的较大者</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/y7EkeCWAzmqtcdL7HZYccBic0jicaWzR8by8DvQuDYlXKtzlIWtltPGPW0HtWAqoaWKr6cy6jYzc4hrVmR6CFlDA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><strong>「解决方案：」</strong></p>
+<ol>
+<li>可以为父元素定义上边框。</li>
+<li>可以为父元素定义上内边距</li>
+<li>可以为父元素添加overflow: hidden。</li>
+</ol>
+<p>还有其他方法，比如浮动、固定、绝对定位的盒子不会有问题，后面咱们再总结。。。</p>
+<h4 id="盒子模型布局稳定性"><a href="#盒子模型布局稳定性" class="headerlink" title="盒子模型布局稳定性"></a>盒子模型布局稳定性</h4><p>优先使用  宽度 （width）  其次 使用内边距（padding）   再次  外边距（margin）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">width &gt;  padding  &gt;   margin   </span><br></pre></td></tr></table></figure>
+
+<p><strong>原因：</strong></p>
+<ul>
+<li>margin 会有外边距合并 还有 ie6下面margin 加倍的bug（讨厌）所以最后使用。</li>
+<li>padding  会影响盒子大小， 需要进行加减计算（麻烦） 其次使用。</li>
+<li>width  没有问题（嗨皮）我们经常使用宽度剩余法 高度剩余法来做。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title></title>
     <url>/2021/11/28/%E6%B5%AE%E5%8A%A8/</url>
     <content><![CDATA[<p>CSS 提供了3种机制来设置盒子的摆放位置，分别是普通流（标准流）、浮动和定位，其中：</p>
@@ -1767,52 +1814,5 @@
 </tbody></table>
 <p>实际工作中,几乎只用clear: both</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>清除元素的默认内外边距</title>
-    <url>/2021/11/28/%E7%9B%B8%E9%82%BB%E5%9D%97%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6/</url>
-    <content><![CDATA[<p><strong>清除元素的默认内外边距👇👇</strong></p>
-<ul>
-<li>行内元素为了照顾兼容性,尽量只设置左右内外边距，不要设置上下内外边距。</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">padding</span>:<span class="number">0</span>;         <span class="comment">/* 清除内边距 */</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">0</span>;          <span class="comment">/* 清除外边距 */</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<p>使用margin定义块元素的<strong>「垂直外边距」</strong>时，可能会出现外边距的合并。</p>
-<h6 id="1-相邻块元素垂直外边距的合并"><a href="#1-相邻块元素垂直外边距的合并" class="headerlink" title="(1). 相邻块元素垂直外边距的合并"></a>(1). 相邻块元素垂直外边距的合并</h6><ul>
-<li>当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom</li>
-<li>下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和</li>
-<li><strong>「取两个值中的较大者」</strong>这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。</li>
-</ul>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/y7EkeCWAzmqtcdL7HZYccBic0jicaWzR8b15wO9U7G1QHGZRB5OIsdJaCdPeg7MzVYtTsbhfGPusK7OCOwWtvs4A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
-<p><strong>「解决方案：尽量给只给一个盒子添加margin值」</strong>。</p>
-<h4 id="2-嵌套块元素垂直外边距的合并（塌陷）"><a href="#2-嵌套块元素垂直外边距的合并（塌陷）" class="headerlink" title="(2). 嵌套块元素垂直外边距的合并（塌陷）"></a>(2). 嵌套块元素垂直外边距的合并（塌陷）</h4><ul>
-<li>对于两个嵌套关系的块元素，如果父元素没有上内边距及边框</li>
-<li>父元素的上外边距会与子元素的上外边距发生合并</li>
-<li>合并后的外边距为两者中的较大者</li>
-</ul>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/y7EkeCWAzmqtcdL7HZYccBic0jicaWzR8by8DvQuDYlXKtzlIWtltPGPW0HtWAqoaWKr6cy6jYzc4hrVmR6CFlDA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
-<p><strong>「解决方案：」</strong></p>
-<ol>
-<li>可以为父元素定义上边框。</li>
-<li>可以为父元素定义上内边距</li>
-<li>可以为父元素添加overflow: hidden。</li>
-</ol>
-<p>还有其他方法，比如浮动、固定、绝对定位的盒子不会有问题，后面咱们再总结。。。</p>
-<h4 id="盒子模型布局稳定性"><a href="#盒子模型布局稳定性" class="headerlink" title="盒子模型布局稳定性"></a>盒子模型布局稳定性</h4><p>优先使用  宽度 （width）  其次 使用内边距（padding）   再次  外边距（margin）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">width &gt;  padding  &gt;   margin   </span><br></pre></td></tr></table></figure>
-
-<p><strong>原因：</strong></p>
-<ul>
-<li>margin 会有外边距合并 还有 ie6下面margin 加倍的bug（讨厌）所以最后使用。</li>
-<li>padding  会影响盒子大小， 需要进行加减计算（麻烦） 其次使用。</li>
-<li>width  没有问题（嗨皮）我们经常使用宽度剩余法 高度剩余法来做。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>笔记</tag>
-      </tags>
   </entry>
 </search>
