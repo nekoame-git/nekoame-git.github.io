@@ -1,268 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Bootstrap学习笔记</title>
-    <url>/2021/11/28/Bootstrap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="Bootstrap学习笔记"><a href="#Bootstrap学习笔记" class="headerlink" title="Bootstrap学习笔记"></a>Bootstrap学习笔记</h1><h2 id="一、栅格系统"><a href="#一、栅格系统" class="headerlink" title="一、栅格系统"></a>一、栅格系统</h2><p>通过一系列的行(row)与列(column)的组合来创建页面布局，按照不同尺寸屏幕分为1~12份</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>超小屏幕手机 (&lt;768px)</th>
-<th>小屏幕平板 (≥768px)</th>
-<th>中等屏幕桌面 (≥992px)</th>
-<th>大屏幕桌面 (≥1200px)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>.container最大宽度</td>
-<td>自动(100%)</td>
-<td>750px</td>
-<td>970px</td>
-<td>1170px</td>
-</tr>
-<tr>
-<td>类前缀</td>
-<td>.col-xs-</td>
-<td>.col-sm-</td>
-<td>.col-md-</td>
-<td>.col-lg-</td>
-</tr>
-<tr>
-<td>列数(column)</td>
-<td></td>
-<td></td>
-<td>12</td>
-<td></td>
-</tr>
-</tbody></table>
-<ul>
-<li>按照不同屏幕划分为1~12等份</li>
-<li>行(row)可以去除父容器作用12px的边距</li>
-<li>xs：extra small</li>
-<li>列大于12，多余的列所在的元素将被作为一个整体另起一行</li>
-<li>每一列默认有左右15px的padding，因此内容互相间隔30px左右</li>
-<li>不能再加margin值，否则会挤掉盒子</li>
-<li>可以同时为一列指定多个设备的类名，一遍划分不同份数，例如<div class="col-lg-6 col-md-4"></div></li>
-</ul>
-<h2 id="二、列嵌套"><a href="#二、列嵌套" class="headerlink" title="二、列嵌套"></a>二、列嵌套</h2><p>一个列(row)内再分为12等份。可以通过添加一个新的.row元素和一系列.col-sm-元素到已经存在的.col-sm-元素内。</p>
-<p>​    嵌套可以像下面多加一个row，消除父盒子row的padding值，而且高度自动和父级一样高</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"> &lt;<span class="selector-tag">div</span> class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;<span class="selector-tag">div</span> class=&quot;row&quot;&gt;</span><br><span class="line">            &lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">6</span> col-md-<span class="number">3</span>&quot;&gt;</span><br><span class="line"><span class="comment">/*嵌套可以像下面多加一个row，消除父盒子row的padding值，而且高度自动和父级一样高*/</span></span><br><span class="line">                &lt;<span class="selector-tag">div</span> class=&quot;row&quot;&gt;</span><br><span class="line">                    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span>&quot;&gt;<span class="number">5</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">                    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span>&quot;&gt;<span class="number">6</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">                    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span>&quot;&gt;<span class="number">7</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">                    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span>&quot;&gt;<span class="number">8</span>&lt;/<span class="selector-tag">div</span>&gt;<span class="number">1</span></span><br><span class="line">                &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">            &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">            &lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">1</span> col-md-<span class="number">3</span>&quot;&gt;<span class="number">2</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">            &lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">3</span> col-md-<span class="number">3</span>&quot;&gt;<span class="number">3</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">            &lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">2</span> col-md-<span class="number">3</span>&quot;&gt;<span class="number">4</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">        &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">    &lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、列偏移"><a href="#三、列偏移" class="headerlink" title="三、列偏移"></a>三、列偏移</h2><p>使用.col-md-offset-类将列右偏移，实际上是通过使用选择器为当前元素增加了左侧的边距(margin)。</p>
-<p>通过控制自身列宽数和偏移的列宽数，同理也可以实现居中，右对齐</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;row&quot;&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span>&quot;&gt;左侧&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">		将列从原来位置右偏移<span class="number">6</span>列，效果是将右侧贴着右边</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span> col-md-offset-<span class="number">6</span>&quot;&gt;右侧&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、列排序"><a href="#四、列排序" class="headerlink" title="四、列排序"></a>四、列排序</h2><p>使用.col-md-push-和.col-md-pull-类就可以很容易地改变列(column)的顺序</p>
-<ul>
-<li>.col-md-pull-         往左拉x个格子</li>
-<li>.col-md-push-        往右推x个格子</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;row&quot;&gt;</span><br><span class="line">	<span class="comment">/*实现了左右侧格子的调换*/</span></span><br><span class="line">  			&lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">3</span> col-md-<span class="number">3</span> col-md-push-<span class="number">9</span>&quot;&gt;左侧的<span class="number">3</span>格，右移<span class="number">9</span>格&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">   			&lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">9</span> col-md-<span class="number">9</span> col-md-pull-<span class="number">3</span>&quot;&gt;右侧的<span class="number">9</span>格，左移<span class="number">3</span>格&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="五、响应式工具"><a href="#五、响应式工具" class="headerlink" title="五、响应式工具"></a>五、响应式工具</h2><p>通过单独或联合使用以下列出的类，可以针对不同屏幕尺寸隐藏或显示页面内容。</p>
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="left">超小屏幕手机 (&lt;768px)</th>
-<th align="left">小屏幕平板 (≥768px)</th>
-<th align="left">中等屏幕桌面 (≥992px)</th>
-<th>大屏幕桌面 (≥1200px)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>.visible-xs-*</code></td>
-<td align="left"><strong>可见</strong></td>
-<td align="left">隐藏</td>
-<td align="left">隐藏</td>
-<td>隐藏</td>
-</tr>
-<tr>
-<td align="left"><code>.visible-sm-*</code></td>
-<td align="left">隐藏</td>
-<td align="left"><strong>可见</strong></td>
-<td align="left">隐藏</td>
-<td>隐藏</td>
-</tr>
-<tr>
-<td align="left"><code>.visible-md-*</code></td>
-<td align="left">隐藏</td>
-<td align="left">隐藏</td>
-<td align="left"><strong>可见</strong></td>
-<td>隐藏</td>
-</tr>
-<tr>
-<td align="left"><code>.visible-lg-*</code></td>
-<td align="left">隐藏</td>
-<td align="left">隐藏</td>
-<td align="left">隐藏</td>
-<td><strong>可见</strong></td>
-</tr>
-<tr>
-<td align="left"><code>.hidden-xs</code></td>
-<td align="left">隐藏</td>
-<td align="left"><strong>可见</strong></td>
-<td align="left"><strong>可见</strong></td>
-<td><strong>可见</strong></td>
-</tr>
-<tr>
-<td align="left"><code>.hidden-sm</code></td>
-<td align="left"><strong>可见</strong></td>
-<td align="left">隐藏</td>
-<td align="left"><strong>可见</strong></td>
-<td><strong>可见</strong></td>
-</tr>
-<tr>
-<td align="left"><code>.hidden-md</code></td>
-<td align="left"><strong>可见</strong></td>
-<td align="left"><strong>可见</strong></td>
-<td align="left">隐藏</td>
-<td><strong>可见</strong></td>
-</tr>
-<tr>
-<td align="left"><code>.hidden-lg</code></td>
-<td align="left"><strong>可见</strong></td>
-<td align="left"><strong>可见</strong></td>
-<td align="left"><strong>可见</strong></td>
-<td>隐藏</td>
-</tr>
-</tbody></table>
-]]></content>
-      <tags>
-        <tag>Bootstrap</tag>
-        <tag>响应式布局</tag>
-        <tag>前端</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2021/11/28/CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<h1 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h1><h2 id="一、层叠性"><a href="#一、层叠性" class="headerlink" title="一、层叠性"></a>一、层叠性</h2><p>​    样式冲突，遵循就近原则，执行样式离结构近的</p>
-<p>​    样式不冲突则不层叠</p>
-<h2 id="二、继承性"><a href="#二、继承性" class="headerlink" title="二、继承性"></a>二、继承性</h2><p>子标签会继承父标签的某些样式，如文本颜色和字号</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span>	&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span>&gt;</span><br><span class="line">     &lt;<span class="selector-tag">p</span>&gt;继承<span class="selector-tag">div</span>的样式，变为红色&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<p>恰当使用继承可以简化代码，降低CSS的复杂性</p>
-<p>子元素可以继承父元素的样式 （<strong>text-，font-，line-等开头的元素可以继承，以及color属性</strong>）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">24px</span>;	<span class="number">12</span>为字号，<span class="number">24</span>为行高</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">1.5</span>;		</span><br><span class="line">    <span class="comment">/*不跟单位时候，1.5则表示子元素div的行高*1.5倍，即10*1.5px=15px*/</span></span><br><span class="line">    行高使用倍数方便子元素根据字体大小自动调整行高</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span>&gt;继承<span class="selector-tag">body</span>行高，<span class="number">1.5</span>*<span class="number">10</span>=<span class="number">15px</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">ul</span>&gt;</span><br><span class="line">		&lt;/<span class="selector-tag">li</span>&gt;<span class="selector-tag">li</span>继承父类的大小行高，父类<span class="selector-tag">ul</span>未指定则再上一层<span class="selector-tag">body</span>，而<span class="selector-tag">body</span>的字体大小为<span class="number">12</span>，行高<span class="number">1.5</span>，则行高最后为当前文字大小的<span class="number">1.5</span>倍，则为<span class="number">12px</span>*<span class="number">1.5</span>=<span class="number">18px</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">	&lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、优先级"><a href="#三、优先级" class="headerlink" title="三、优先级"></a>三、优先级</h2><p>选择器权重</p>
-<table>
-<thead>
-<tr>
-<th align="left">标签选择器</th>
-<th align="left">计算权重公式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">继承或者 *</td>
-<td align="left">0,0,0,0</td>
-</tr>
-<tr>
-<td align="left">每个元素（标签选择器）</td>
-<td align="left">0,0,0,1</td>
-</tr>
-<tr>
-<td align="left">每个类，伪类</td>
-<td align="left">0,0,1,0</td>
-</tr>
-<tr>
-<td align="left">每个ID</td>
-<td align="left">0,1,0,0</td>
-</tr>
-<tr>
-<td align="left">每个行内样式 style=””</td>
-<td align="left">1,0,0,0</td>
-</tr>
-<tr>
-<td align="left">每个!important  最重要的</td>
-<td align="left">∞ 无穷大</td>
-</tr>
-</tbody></table>
-<p>值从左到右，左面的最大，一级大于一级，数位之间没有进制（会加到0,0,0,7也不会有进位），级别之间不可超越。</p>
-<p>关于CSS权重，我们需要一套计算公式来去计算，这个就是 CSS Specificity（特殊性）</p>
-<p>div { color: pink !important; }</p>
-<p>注意权重对应的<strong>对象</strong>是谁，有可能对于这个标签来说其实是继承。</p>
-<p>不管父元素的权重多高，子元素得到的权重都只是继承而已。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="selector-class">.test</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">div</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink<span class="meta">!important</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-id">#demo</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;test&quot; id=&quot;demo&quot; style=&quot;<span class="attribute">color</span>: purple<span class="string">&quot;&gt;你笑起来真好看&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>权重叠加：</strong>（如果是复合选择器，则会有权重叠加）</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">ul</span>  <span class="selector-tag">li</span>   ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>	三个标签选择器权重相加</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>   ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>	</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>      -----—&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>	伪类 加 标签</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">a</span>       ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>	</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="comment">/* .nav li  权重是 11 */</span></span><br><span class="line">        <span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 需求把第一个小li 颜色改为 粉色加粗 ? */</span></span><br><span class="line">        <span class="comment">/* .pink  权重是 10  */</span></span><br><span class="line">       <span class="selector-class">.nav</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink;</span><br><span class="line">            <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;  </span><br><span class="line">    &lt;<span class="selector-tag">ul</span> class=&quot;<span class="selector-tag">nav</span>&quot;&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span> class=&quot;pink&quot;&gt;人生四大悲&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;家里没宽带&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;网速不够快&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;手机没流量&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;学校没wifi&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">    &lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>这里.nav未产生继承，因为.nav后面加了li，所以直接选择了li元素，所以.nav算为类的权重</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Emmet语法学习</title>
-    <url>/2021/09/21/Emmet%E8%AF%AD%E6%B3%95%EF%BC%88vscode%E8%87%AA%E5%B8%A6%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="Emmet语法（vscode自带）"><a href="#Emmet语法（vscode自带）" class="headerlink" title="Emmet语法（vscode自带）"></a>Emmet语法（vscode自带）</h1><h2 id="一、快速生成HTML结构语法"><a href="#一、快速生成HTML结构语法" class="headerlink" title="一、快速生成HTML结构语法"></a>一、快速生成HTML结构语法</h2><p>1、生成标签，输入div 按tab键，快速生成标签</p>
-<p>2、div*5 生成5个div标签</p>
-<p>3、父子级关系标签用&gt; ，    如ul&gt;li</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>4、兄弟（并列）关系用+，如div+p</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>5、生成带类名和id的标签直接写id（默认div标签）如.demo或#demo    </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">.id </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">#demo</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">p.demo	指定标签则前面加上限制标签即可</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">ul&gt;li.demo</span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>6、使用$自增符号，生成多个有顺序的类名</p>
-<p>（应该是把$符号变为对应数字</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">p.demo$*5</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>7、用{}中输入，指定标签中的文本内容</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">div&#123;text&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">div&#123;text$&#125;*5</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="二、快速生成CSS结构语法"><a href="#二、快速生成CSS结构语法" class="headerlink" title="二、快速生成CSS结构语法"></a>二、快速生成CSS结构语法</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">输入tac补全成<span class="attribute">text-align</span>: center;</span><br><span class="line">输入ti补全成<span class="attribute">text-indent</span>: ;</span><br><span class="line">输入w100补全成<span class="attribute">width</span>: <span class="number">100px</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>笔记</tag>
-        <tag>Emmet语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css背景设置</title>
-    <url>/2021/09/23/CSS%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="CSS背景选择"><a href="#CSS背景选择" class="headerlink" title="CSS背景选择"></a><strong>CSS背景选择</strong></h2><h5 id="一、background-color-颜色值-设置背景颜色，默认transparent-透明色"><a href="#一、background-color-颜色值-设置背景颜色，默认transparent-透明色" class="headerlink" title="一、background-color: 颜色值       设置背景颜色，默认transparent(透明色)"></a>一、<strong>background-color:</strong> 颜色值       设置背景颜色，默认transparent(透明色)</h5><h5 id="二、background-image：none-url-用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。"><a href="#二、background-image：none-url-用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。" class="headerlink" title="二、background-image：none/url()   用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。"></a>二、<strong>background-image：none/url()</strong>   用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。</h5><h5 id="三、background-repeat：图片平铺（默认平铺）"><a href="#三、background-repeat：图片平铺（默认平铺）" class="headerlink" title="三、background-repeat：图片平铺（默认平铺）"></a>三、<strong>background-repeat：</strong>图片平铺（默认平铺）</h5><p>​    = repeat-x | repeat-y |  [repeat | no-repeat | space | round]{1,2}</p>
-<p>​    repeat-x： 背景图像在横向上平铺 </p>
-<p>​    repeat-y： 背景图像在纵向上平铺 </p>
-<p>​    repeat： 背景图像在横向和纵向平铺 </p>
-<p>​    no-repeat： 背景图像不平铺 </p>
-<p>​    round： 背景图像自动缩放直到适应且填充满整个容器。（CSS3） </p>
-<p>​    space： 背景图像以相同的间距平铺且填充满整个容器或某个方向。（CSS3）</p>
-<h5 id="四、background-position：x-y-设置图片在背景中的位置，方位名词可以使用两个值-不分顺序-，例如center-top（尽量）-若第二个省略，则默认为居中。"><a href="#四、background-position：x-y-设置图片在背景中的位置，方位名词可以使用两个值-不分顺序-，例如center-top（尽量）-若第二个省略，则默认为居中。" class="headerlink" title="四、background-position：x  y;**    设置图片在背景中的位置，方位名词可以使用两个值(不分顺序)，例如center top（尽量）;若第二个省略，则默认为居中。"></a><strong>四、background-position：x  y</strong>;**    设置图片在背景中的位置，方位名词可以使用两个值(不分顺序)，例如center top（尽量）;若第二个省略，则默认为居中。</h5><h6 id="1、方位名词："><a href="#1、方位名词：" class="headerlink" title="1、方位名词："></a>1、方位名词：</h6><p>​        percentage： 用百分比指定背景图像填充的位置。可以为负值。其参考的尺寸        为容器大小减去背景图片大小 </p>
-<p>​        length： 用长度值指定背景图像填充的位置。可以为负值。 </p>
-<p>​        center： 背景图像横向和纵向居中。 </p>
-<p>​        left： 背景图像在横向上填充从左边开始。 </p>
-<p>​        right： 背景图像在横向上填充从右边开始。 </p>
-<p>​        top： 背景图像在纵向上填充从顶部开始。 </p>
-<p>​        bottom： 背景图像在纵向上填充从底部开始。 </p>
-<h6 id="2、精确单位"><a href="#2、精确单位" class="headerlink" title="2、精确单位"></a>2、精确单位</h6><p>​        x和y均为相对左上角的坐标。第一个数值一定为x坐标，第二个不填则默认垂        直居中</p>
-<h6 id="3、混合坐标，第一个也一定为x坐标方向的位置"><a href="#3、混合坐标，第一个也一定为x坐标方向的位置" class="headerlink" title="3、混合坐标，第一个也一定为x坐标方向的位置"></a>3、混合坐标，第一个也一定为x坐标方向的位置</h6><h5 id="五、background-attachment：；背景图像固定（背景附着，不随滚动）"><a href="#五、background-attachment：；背景图像固定（背景附着，不随滚动）" class="headerlink" title="五、background-attachment：；背景图像固定（背景附着，不随滚动）"></a><strong>五、background-attachment</strong>：；背景图像固定（背景附着，不随滚动）</h5><p>​    fixed： 背景图像相对于窗体固定，不随着滚动。 </p>
-<p>​    scroll： 背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟    着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起    滚动。 </p>
-<p>​    local： 背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像    也会跟着滚动，因为背景图像总是要跟着内容。（CSS3） </p>
-<h5 id="六、背景属性复合写法（之间用空格分开）"><a href="#六、背景属性复合写法（之间用空格分开）" class="headerlink" title="六、背景属性复合写法（之间用空格分开）"></a>六、背景属性复合写法（之间用空格分开）</h5><p>规范写法：</p>
-<p>​    background: 背景颜色  背景图片地址  背景平铺   背景图像滚动   背景图片位置</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: transparent <span class="built_in">url</span>() no-repeat fixed center top</span><br><span class="line">background:black <span class="built_in">url</span>(<span class="string">test1.jpg</span>) no-repeat scroll <span class="number">10px</span> <span class="number">20px</span> </span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="七、背景色半透明（盒子里的内容不受影响）"><a href="#七、背景色半透明（盒子里的内容不受影响）" class="headerlink" title="七、背景色半透明（盒子里的内容不受影响）"></a><strong>七、背景色半透明（盒子里的内容不受影响）</strong></h5><p>最后一个参数为alpha透明度，取值范围0~1之间</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(red, green, blue, alpha);</span><br></pre></td></tr></table></figure>
-
-<h3 id="CSS背景总结"><a href="#CSS背景总结" class="headerlink" title="CSS背景总结"></a><strong>CSS背景总结</strong></h3><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3992008468.png"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>css背景设置</title>
     <url>/2021/09/23/CSS%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<h3 id="CSS-三角形"><a href="#CSS-三角形" class="headerlink" title="CSS 三角形"></a><strong>CSS 三角形</strong></h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">   <span class="attribute">width</span>: <span class="number">0</span>; </span><br><span class="line">   <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">line-height</span>:<span class="number">0</span>；</span><br><span class="line">   font-size: <span class="number">0</span>;</span><br><span class="line">   <span class="attribute">border-top</span>: <span class="number">10px</span> solid red;</span><br><span class="line">   <span class="attribute">border-right</span>: <span class="number">10px</span> solid green;</span><br><span class="line">   <span class="attribute">border-bottom</span>: <span class="number">10px</span> solid blue;</span><br><span class="line">   <span class="attribute">border-left</span>: <span class="number">10px</span> solid <span class="number">#000</span>; </span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
@@ -380,22 +118,36 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/11/28/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>Emmet语法学习</title>
+    <url>/2021/09/21/Emmet%E8%AF%AD%E6%B3%95%EF%BC%88vscode%E8%87%AA%E5%B8%A6%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="Emmet语法（vscode自带）"><a href="#Emmet语法（vscode自带）" class="headerlink" title="Emmet语法（vscode自带）"></a>Emmet语法（vscode自带）</h1><h2 id="一、快速生成HTML结构语法"><a href="#一、快速生成HTML结构语法" class="headerlink" title="一、快速生成HTML结构语法"></a>一、快速生成HTML结构语法</h2><p>1、生成标签，输入div 按tab键，快速生成标签</p>
+<p>2、div*5 生成5个div标签</p>
+<p>3、父子级关系标签用&gt; ，    如ul&gt;li</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>4、兄弟（并列）关系用+，如div+p</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>5、生成带类名和id的标签直接写id（默认div标签）如.demo或#demo    </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">.id </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">#demo</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">p.demo	指定标签则前面加上限制标签即可</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">ul&gt;li.demo</span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>6、使用$自增符号，生成多个有顺序的类名</p>
+<p>（应该是把$符号变为对应数字</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">p.demo$*5</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>7、用{}中输入，指定标签中的文本内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">div&#123;text&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">div&#123;text$&#125;*5</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、快速生成CSS结构语法"><a href="#二、快速生成CSS结构语法" class="headerlink" title="二、快速生成CSS结构语法"></a>二、快速生成CSS结构语法</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">输入tac补全成<span class="attribute">text-align</span>: center;</span><br><span class="line">输入ti补全成<span class="attribute">text-indent</span>: ;</span><br><span class="line">输入w100补全成<span class="attribute">width</span>: <span class="number">100px</span>;</span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
+      <tags>
+        <tag>Emmet语法</tag>
+        <tag>前端</tag>
+        <tag>笔记</tag>
+      </tags>
   </entry>
   <entry>
     <title>git学习笔记</title>
@@ -446,11 +198,131 @@
 <p>命令：git merge 分支名称</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">解决合并冲突:</span><br><span class="line">当在两个分支中同时修改了同一个文件的同一行时(不是同一行时会自动合并)，合并时会产生冲突</span><br><span class="line">[yinwei@centos git_learn]$ git merge dev</span><br><span class="line">Auto-merging file01.txt</span><br><span class="line">CONFLICT (content): Merge conflict in file01.txt</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br><span class="line">然后打开file01.txt中会显示两个不同分支修改的后合并产生的冲突点</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">updata 1 count=1</span><br><span class="line">=======</span><br><span class="line">updata 1 count=2</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</span><br><span class="line"></span><br><span class="line">排除冲突后，再次add 和commit</span><br><span class="line">[yinwei@centos git_learn]$ git add .</span><br><span class="line">[yinwei@centos git_learn]$ git commit</span><br><span class="line">[master a54af4e] Merge branch &#x27;dev&#x27;</span><br><span class="line">[yinwei@centos git_learn]$ git log --pretty=oneline --abbrev-commit --graph --decorate --all</span><br><span class="line">*   a54af4e (HEAD, master) Merge branch &#x27;dev&#x27;</span><br><span class="line">|\  </span><br><span class="line">| * f419933 (dev) file01 add count=2</span><br><span class="line">* | 0b3211f file01 add count=1</span><br><span class="line">|/  </span><br><span class="line">*   927fbb9 Merge branch &#x27;dev01&#x27;</span><br><span class="line">|\  </span><br><span class="line">| * f6f7583 add file02</span><br><span class="line">* | 316fa80 add gitignore</span><br><span class="line">* | 4b611fc update file01</span><br><span class="line">|/  </span><br><span class="line">* b5c5a80 add file01</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ol>
+<h3 id="添加，推送远程仓库，绑定本地和远程分支"><a href="#添加，推送远程仓库，绑定本地和远程分支" class="headerlink" title="添加，推送远程仓库，绑定本地和远程分支"></a>添加，推送远程仓库，绑定本地和远程分支</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[yinwei@centos git_learn]$ git remote add origin git@gitee.com:nekoame/git_learn.git</span><br><span class="line">[yinwei@centos git_learn]$ git remote</span><br><span class="line">origin</span><br><span class="line">[yinwei@centos git_learn]$ git push origin master</span><br><span class="line">Counting objects: 22, done.</span><br><span class="line">Compressing objects: 100% (14/14), done.</span><br><span class="line">Writing objects: 100% (22/22), 1.68 KiB | 0 bytes/s, done.</span><br><span class="line">Total 22 (delta 6), reused 0 (delta 0)</span><br><span class="line">remote: Powered by GITEE.COM [GNK-6.3]</span><br><span class="line">To git@gitee.com:nekoame/git_learn.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">如果报错，说明原来的仓库的不是新建未上传过的已经有了分支，需要git pull</span><br><span class="line">-----------------------------------------------------------</span><br><span class="line"></span><br><span class="line">下面使用git branch -vv 查看本地和远程分支的对应关系，此时没有绑定关系</span><br><span class="line">[yinwei@centos git_learn]$ git branch -vv</span><br><span class="line">  dev    f419933 file01 add count=2</span><br><span class="line">* master a54af4e Merge branch &#x27;dev&#x27;</span><br><span class="line"></span><br><span class="line">------------------------------------------------------------</span><br><span class="line">绑定本地和远程的分支，意为将本地的master绑定到远程的master</span><br><span class="line">--set-upstream 意为推送到远端的同时并且建立起和远端分支的关联关系。</span><br><span class="line">如果当前分支已经和远端分支关联，则可以省略分支名和远端名。</span><br><span class="line">git push 将master分支推送到已关联的远端分支。</span><br><span class="line">[yinwei@centos git_learn]$ git push --set-upstream origin master:master</span><br><span class="line">Branch master set up to track remote branch master from origin.</span><br><span class="line">Everything up-to-date</span><br><span class="line">[yinwei@centos git_learn]$ git branch -vv</span><br><span class="line">  dev    f419933 file01 add count=2</span><br><span class="line">* master a54af4e [origin/master] Merge branch &#x27;dev&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h3><ul>
+<li>如果已经有一个远端仓库，我们可以直接clone到本地。</li>
+<li>命令: git clone &lt;仓库路径&gt; [本地目录]</li>
+<li>本地目录可以省略，会自动生成一个目录</li>
+<li></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">[yinwei@centos Desktop]$ git clone git@gitee.com:nekoame/git_learn.git git_test02</span><br><span class="line">Cloning into &#x27;git_test02&#x27;...</span><br><span class="line">remote: Enumerating objects: 22, done.</span><br><span class="line">remote: Counting objects: 100% (22/22), done.</span><br><span class="line">remote: Compressing objects: 100% (14/14), done.</span><br><span class="line">remote: Total 22 (delta 6), reused 0 (delta 0), pack-reused 0</span><br><span class="line">Receiving objects: 100% (22/22), done.</span><br><span class="line">Resolving deltas: 100% (6/6), done.</span><br><span class="line">[yinwei@centos Desktop]$ cd git_test02/</span><br><span class="line">-------------下面看看clone下来的log和分支已经绑定关系-------------</span><br><span class="line">[yinwei@centos git_test02]$ git log --pretty=oneline --abbrev-commit --graph --decorate --all</span><br><span class="line">*   a54af4e (HEAD, origin/master, origin/HEAD, master) Merge branch &#x27;dev&#x27;</span><br><span class="line">|\  </span><br><span class="line">| * f419933 file01 add count=2</span><br><span class="line">* | 0b3211f file01 add count=1</span><br><span class="line">|/  </span><br><span class="line">*   927fbb9 Merge branch &#x27;dev01&#x27;</span><br><span class="line">|\  </span><br><span class="line">| * f6f7583 add file02</span><br><span class="line">* | 316fa80 add gitignore</span><br><span class="line">* | 4b611fc update file01</span><br><span class="line">|/  </span><br><span class="line">* b5c5a80 add file01</span><br><span class="line">[yinwei@centos git_test02]$ git branch</span><br><span class="line">* master</span><br><span class="line">[yinwei@centos git_test02]$ git branch -vv</span><br><span class="line">* master a54af4e [origin/master] Merge branch &#x27;dev&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="从远程仓库中抓取和拉取"><a href="#从远程仓库中抓取和拉取" class="headerlink" title="从远程仓库中抓取和拉取"></a><strong>从远程仓库中抓取和拉取</strong></h3><ul>
+<li><p>远程分支和本地的分支一样，我们可以进行merge操作，只是需要先把远端仓库里的更新都下载到本地，再进行操作。</p>
+<p>抓取 命令：git fetch [remote name] [branch name]</p>
+<p><strong>抓取指令就是将仓库里的更新都抓取到本地，不会进行合并</strong></p>
+<p>如果不指定远端名称和分支名，则抓取所有分支。</p>
+<p>相当于只fetch到log记录，</p>
+</li>
+<li><p>拉取 命令：git pull [remote name] [branch name]</p>
+<p><strong>拉取指令就是将远端仓库的修改拉到本地并自动进行合并，等同于</strong>fetch+merge</p>
+<p>如果不指定远端名称和分支名，则抓取所有并更新当前分支。</p>
+</li>
+</ul>
+<h3 id="查看、删除远程分支"><a href="#查看、删除远程分支" class="headerlink" title="查看、删除远程分支"></a>查看、删除远程分支</h3><ul>
+<li>​    git branch -a 查看所有本地和远程分支</li>
+<li>​    git push origin –delete 分支名    删除远程分支</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[yinwei@centos git_test02]$ git branch -a</span><br><span class="line">  dev03</span><br><span class="line">  hoxfix</span><br><span class="line">* hoxfix02</span><br><span class="line">  master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/dev03</span><br><span class="line">  remotes/origin/hoxfix</span><br><span class="line">  remotes/origin/hoxfix02</span><br><span class="line">  remotes/origin/master</span><br><span class="line">  remotes/origin/ver</span><br><span class="line">[yinwei@centos git_test02]$ git push origin --delete ver</span><br><span class="line">remote: Powered by GITEE.COM [GNK-6.3]</span><br><span class="line">To git@gitee.com:nekoame/git_learn.git</span><br><span class="line"> - [deleted]         ver</span><br><span class="line">[yinwei@centos git_test02]$ git branch -a</span><br><span class="line">  dev03</span><br><span class="line">  hoxfix</span><br><span class="line">* hoxfix02</span><br><span class="line">  master</span><br><span class="line">  remotes/origin/HEAD -&gt; origin/master</span><br><span class="line">  remotes/origin/dev03</span><br><span class="line">  remotes/origin/hoxfix</span><br><span class="line">  remotes/origin/hoxfix02</span><br><span class="line">  remotes/origin/master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="修改本地分支名称"><a href="#修改本地分支名称" class="headerlink" title="修改本地分支名称"></a>修改本地分支名称</h3><ul>
+<li>git branch -m 原分支名 新分支名</li>
+<li>没有原分支名则默认为当前分支！！！</li>
+</ul>
+<h3 id="获取最新分支情况"><a href="#获取最新分支情况" class="headerlink" title="获取最新分支情况"></a>获取最新分支情况</h3><ul>
+<li>git fetch -p</li>
+</ul>
+<h3 id="备注特殊情况"><a href="#备注特殊情况" class="headerlink" title="备注特殊情况"></a>备注特殊情况</h3><p>如果出现下列情况，说明本地绑定了已经在远程仓库删除了的分支。</p>
+<ul>
+<li>解决办法：重新push新建并绑定分支</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[yinwei@centos git_learn]$ git branch -vv</span><br><span class="line">  dev      f419933 file01 add count=2</span><br><span class="line">  dev03    8ce141f [origin/dev03] add file05</span><br><span class="line">  hoxfix   fe3c2bd [origin/hoxfix] add hotfix</span><br><span class="line">  hoxfix02 f9d0f68 [origin/hoxfix02] add hotfix02</span><br><span class="line">  master   51e11a2 [origin/master] add master01</span><br><span class="line">* ver01    82ae0d8 [origin/ver] add ver01</span><br><span class="line">[yinwei@centos git_learn]$ git pull</span><br><span class="line">Your configuration specifies to merge with the ref &#x27;ver&#x27;</span><br><span class="line">from the remote, but no such ref was fetched.</span><br><span class="line">此时显示ver01绑定的远程分支ver已经被删除</span><br><span class="line">---------------------解决办法--------------------------------</span><br><span class="line">[yinwei@centos git_learn]$ git push --set-upstream origin ver01:ver01  重新push绑定</span><br><span class="line">Branch ver01 set up to track remote branch ver01 from origin.</span><br><span class="line">Everything up-to-date</span><br><span class="line">[yinwei@centos git_learn]$ git branch -vv</span><br><span class="line">  dev      f419933 file01 add count=2</span><br><span class="line">  dev03    8ce141f [origin/dev03] add file05</span><br><span class="line">  hoxfix   fe3c2bd [origin/hoxfix] add hotfix</span><br><span class="line">  hoxfix02 f9d0f68 [origin/hoxfix02] add hotfix02</span><br><span class="line">  master   51e11a2 [origin/master] add master01</span><br><span class="line">* ver01    82ae0d8 [origin/ver01] add ver01</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>前端</tag>
         <tag>笔记</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/11/28/CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h1 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h1><h2 id="一、层叠性"><a href="#一、层叠性" class="headerlink" title="一、层叠性"></a>一、层叠性</h2><p>​    样式冲突，遵循就近原则，执行样式离结构近的</p>
+<p>​    样式不冲突则不层叠</p>
+<h2 id="二、继承性"><a href="#二、继承性" class="headerlink" title="二、继承性"></a>二、继承性</h2><p>子标签会继承父标签的某些样式，如文本颜色和字号</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span>	&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span>&gt;</span><br><span class="line">     &lt;<span class="selector-tag">p</span>&gt;继承<span class="selector-tag">div</span>的样式，变为红色&lt;/<span class="selector-tag">p</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>恰当使用继承可以简化代码，降低CSS的复杂性</p>
+<p>子元素可以继承父元素的样式 （<strong>text-，font-，line-等开头的元素可以继承，以及color属性</strong>）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">24px</span>;	<span class="number">12</span>为字号，<span class="number">24</span>为行高</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">1.5</span>;		</span><br><span class="line">    <span class="comment">/*不跟单位时候，1.5则表示子元素div的行高*1.5倍，即10*1.5px=15px*/</span></span><br><span class="line">    行高使用倍数方便子元素根据字体大小自动调整行高</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span>&gt;继承<span class="selector-tag">body</span>行高，<span class="number">1.5</span>*<span class="number">10</span>=<span class="number">15px</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">ul</span>&gt;</span><br><span class="line">		&lt;/<span class="selector-tag">li</span>&gt;<span class="selector-tag">li</span>继承父类的大小行高，父类<span class="selector-tag">ul</span>未指定则再上一层<span class="selector-tag">body</span>，而<span class="selector-tag">body</span>的字体大小为<span class="number">12</span>，行高<span class="number">1.5</span>，则行高最后为当前文字大小的<span class="number">1.5</span>倍，则为<span class="number">12px</span>*<span class="number">1.5</span>=<span class="number">18px</span>&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">	&lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、优先级"><a href="#三、优先级" class="headerlink" title="三、优先级"></a>三、优先级</h2><p>选择器权重</p>
+<table>
+<thead>
+<tr>
+<th align="left">标签选择器</th>
+<th align="left">计算权重公式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">继承或者 *</td>
+<td align="left">0,0,0,0</td>
+</tr>
+<tr>
+<td align="left">每个元素（标签选择器）</td>
+<td align="left">0,0,0,1</td>
+</tr>
+<tr>
+<td align="left">每个类，伪类</td>
+<td align="left">0,0,1,0</td>
+</tr>
+<tr>
+<td align="left">每个ID</td>
+<td align="left">0,1,0,0</td>
+</tr>
+<tr>
+<td align="left">每个行内样式 style=””</td>
+<td align="left">1,0,0,0</td>
+</tr>
+<tr>
+<td align="left">每个!important  最重要的</td>
+<td align="left">∞ 无穷大</td>
+</tr>
+</tbody></table>
+<p>值从左到右，左面的最大，一级大于一级，数位之间没有进制（会加到0,0,0,7也不会有进位），级别之间不可超越。</p>
+<p>关于CSS权重，我们需要一套计算公式来去计算，这个就是 CSS Specificity（特殊性）</p>
+<p>div { color: pink !important; }</p>
+<p>注意权重对应的<strong>对象</strong>是谁，有可能对于这个标签来说其实是继承。</p>
+<p>不管父元素的权重多高，子元素得到的权重都只是继承而已。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="selector-class">.test</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">div</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink<span class="meta">!important</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-id">#demo</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;test&quot; id=&quot;demo&quot; style=&quot;<span class="attribute">color</span>: purple<span class="string">&quot;&gt;你笑起来真好看&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>权重叠加：</strong>（如果是复合选择器，则会有权重叠加）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">ul</span>  <span class="selector-tag">li</span>   ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">3</span>	三个标签选择器权重相加</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>   ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>	</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>      -----—&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>	伪类 加 标签</span><br><span class="line"><span class="selector-class">.nav</span> <span class="selector-tag">a</span>       ------&gt;      <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>	</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="comment">/* .nav li  权重是 11 */</span></span><br><span class="line">        <span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 需求把第一个小li 颜色改为 粉色加粗 ? */</span></span><br><span class="line">        <span class="comment">/* .pink  权重是 10  */</span></span><br><span class="line">       <span class="selector-class">.nav</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink;</span><br><span class="line">            <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;  </span><br><span class="line">    &lt;<span class="selector-tag">ul</span> class=&quot;<span class="selector-tag">nav</span>&quot;&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span> class=&quot;pink&quot;&gt;人生四大悲&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;家里没宽带&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;网速不够快&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;手机没流量&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;学校没wifi&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">    &lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里.nav未产生继承，因为.nav后面加了li，所以直接选择了li元素，所以.nav算为类的权重</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/11/28/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>js基础知识笔记</title>
@@ -1283,18 +1155,6 @@
       </tags>
   </entry>
   <entry>
-    <title>复合选择器笔记（思维导图）</title>
-    <url>/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3362048325.png"></p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>笔记</tag>
-        <tag>复合选择器</tag>
-        <tag>思维导图</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>元素显示模式笔记（思维导图）</title>
     <url>/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/1802855579.png"></p>
@@ -1302,9 +1162,90 @@
       <tags>
         <tag>前端</tag>
         <tag>笔记</tag>
-        <tag>思维导图</tag>
         <tag>元素显示模式</tag>
+        <tag>思维导图</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/11/28/%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/</url>
+    <content><![CDATA[<h1 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h1><h4 id="1-1-display-显示（重点）"><a href="#1-1-display-显示（重点）" class="headerlink" title="1.1 display 显示（重点）"></a>1.1 display 显示（重点）</h4><p>display设置或检索对象是否显示或如何显示。</p>
+<ul>
+<li><p>display: none 隐藏对象</p>
+</li>
+<li><ul>
+<li>特点：隐藏之后，**<code>不再保留位置。</code>**</li>
+</ul>
+</li>
+<li><p>display: block 除了转换为块级元素之外，同时还有显示元素的意思。</p>
+</li>
+</ul>
+<p><code>实际开发场景</code>：配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">&#125;</span><br><span class="line">当鼠标放到box上时候，则显示隐藏的<span class="attribute">mask</span>遮罩元素</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-2-visibility-可见性"><a href="#1-2-visibility-可见性" class="headerlink" title="1.2 visibility 可见性"></a>1.2 visibility 可见性</h4><p>设置或检索是否显示对象</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visibility：visible ;  对象可视</span><br><span class="line"></span><br><span class="line">visibility：hidden;    对象隐藏</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>特点：隐藏之后，<code>继续保留原有位置</code>。</li>
+</ul>
+<h4 id="1-3-overflow-溢出"><a href="#1-3-overflow-溢出" class="headerlink" title="1.3 overflow 溢出"></a>1.3 overflow 溢出</h4><p>检索或设置当对象的内容超过其指定高度及宽度时如何管理内容。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">visible</td>
+<td align="left">不剪切内容也不添加滚动条</td>
+</tr>
+<tr>
+<td align="left">hidden</td>
+<td align="left">不显示超过对象尺寸的内容，超出的部分隐藏掉</td>
+</tr>
+<tr>
+<td align="left">scroll</td>
+<td align="left">不管超出内容否，总是显示滚动条</td>
+</tr>
+<tr>
+<td align="left">auto</td>
+<td align="left">超出自动显示滚动条，不超出不显示滚动条</td>
+</tr>
+</tbody></table>
+<p><code>实际开发场景</code>：</p>
+<ol>
+<li>清除浮动</li>
+<li>隐藏超出内容，隐藏掉,  不允许内容超过父盒子。</li>
+</ol>
+<h4 id="1-4-显示与隐藏总结"><a href="#1-4-显示与隐藏总结" class="headerlink" title="1.4 显示与隐藏总结"></a>1.4 显示与隐藏总结</h4><table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">区别</th>
+<th align="left">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">display</td>
+<td align="left">隐藏对象，<strong>不保留位置</strong></td>
+<td align="left">配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</td>
+</tr>
+<tr>
+<td align="left">visibility</td>
+<td align="left">隐藏对象，<strong>保留位置</strong></td>
+<td align="left">使用较少</td>
+</tr>
+<tr>
+<td align="left">overflow</td>
+<td align="left">只是隐藏超出大小的部分</td>
+<td align="left">1. 可以清除浮动 2. 保证盒子里面的内容不会超出该盒子范围</td>
+</tr>
+</tbody></table>
+]]></content>
   </entry>
   <entry>
     <title></title>
@@ -1360,6 +1301,154 @@
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* box-shadow:水平位置 垂直位置 模糊距离 阴影尺寸（影子大小） 阴影颜色  内/外阴影； */</span></span><br><span class="line">   <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">15px</span> <span class="number">30px</span>  <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">4</span>);   </span><br></pre></td></tr></table></figure>
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>Bootstrap学习笔记</title>
+    <url>/2021/11/28/Bootstrap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Bootstrap学习笔记"><a href="#Bootstrap学习笔记" class="headerlink" title="Bootstrap学习笔记"></a>Bootstrap学习笔记</h1><h2 id="一、栅格系统"><a href="#一、栅格系统" class="headerlink" title="一、栅格系统"></a>一、栅格系统</h2><p>通过一系列的行(row)与列(column)的组合来创建页面布局，按照不同尺寸屏幕分为1~12份</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>超小屏幕手机 (&lt;768px)</th>
+<th>小屏幕平板 (≥768px)</th>
+<th>中等屏幕桌面 (≥992px)</th>
+<th>大屏幕桌面 (≥1200px)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.container最大宽度</td>
+<td>自动(100%)</td>
+<td>750px</td>
+<td>970px</td>
+<td>1170px</td>
+</tr>
+<tr>
+<td>类前缀</td>
+<td>.col-xs-</td>
+<td>.col-sm-</td>
+<td>.col-md-</td>
+<td>.col-lg-</td>
+</tr>
+<tr>
+<td>列数(column)</td>
+<td></td>
+<td></td>
+<td>12</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>按照不同屏幕划分为1~12等份</li>
+<li>行(row)可以去除父容器作用12px的边距</li>
+<li>xs：extra small</li>
+<li>列大于12，多余的列所在的元素将被作为一个整体另起一行</li>
+<li>每一列默认有左右15px的padding，因此内容互相间隔30px左右</li>
+<li>不能再加margin值，否则会挤掉盒子</li>
+<li>可以同时为一列指定多个设备的类名，一遍划分不同份数，例如<div class="col-lg-6 col-md-4"></div></li>
+</ul>
+<h2 id="二、列嵌套"><a href="#二、列嵌套" class="headerlink" title="二、列嵌套"></a>二、列嵌套</h2><p>一个列(row)内再分为12等份。可以通过添加一个新的.row元素和一系列.col-sm-元素到已经存在的.col-sm-元素内。</p>
+<p>​    嵌套可以像下面多加一个row，消除父盒子row的padding值，而且高度自动和父级一样高</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"> &lt;<span class="selector-tag">div</span> class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;<span class="selector-tag">div</span> class=&quot;row&quot;&gt;</span><br><span class="line">            &lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">6</span> col-md-<span class="number">3</span>&quot;&gt;</span><br><span class="line"><span class="comment">/*嵌套可以像下面多加一个row，消除父盒子row的padding值，而且高度自动和父级一样高*/</span></span><br><span class="line">                &lt;<span class="selector-tag">div</span> class=&quot;row&quot;&gt;</span><br><span class="line">                    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span>&quot;&gt;<span class="number">5</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">                    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span>&quot;&gt;<span class="number">6</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">                    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span>&quot;&gt;<span class="number">7</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">                    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span>&quot;&gt;<span class="number">8</span>&lt;/<span class="selector-tag">div</span>&gt;<span class="number">1</span></span><br><span class="line">                &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">            &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">            &lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">1</span> col-md-<span class="number">3</span>&quot;&gt;<span class="number">2</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">            &lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">3</span> col-md-<span class="number">3</span>&quot;&gt;<span class="number">3</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">            &lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">2</span> col-md-<span class="number">3</span>&quot;&gt;<span class="number">4</span>&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">        &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">    &lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、列偏移"><a href="#三、列偏移" class="headerlink" title="三、列偏移"></a>三、列偏移</h2><p>使用.col-md-offset-类将列右偏移，实际上是通过使用选择器为当前元素增加了左侧的边距(margin)。</p>
+<p>通过控制自身列宽数和偏移的列宽数，同理也可以实现居中，右对齐</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;row&quot;&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span>&quot;&gt;左侧&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">		将列从原来位置右偏移<span class="number">6</span>列，效果是将右侧贴着右边</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=&quot;col-md-<span class="number">3</span> col-md-offset-<span class="number">6</span>&quot;&gt;右侧&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、列排序"><a href="#四、列排序" class="headerlink" title="四、列排序"></a>四、列排序</h2><p>使用.col-md-push-和.col-md-pull-类就可以很容易地改变列(column)的顺序</p>
+<ul>
+<li>.col-md-pull-         往左拉x个格子</li>
+<li>.col-md-push-        往右推x个格子</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;row&quot;&gt;</span><br><span class="line">	<span class="comment">/*实现了左右侧格子的调换*/</span></span><br><span class="line">  			&lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">3</span> col-md-<span class="number">3</span> col-md-push-<span class="number">9</span>&quot;&gt;左侧的<span class="number">3</span>格，右移<span class="number">9</span>格&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">   			&lt;<span class="selector-tag">div</span> class=&quot;col-lg-<span class="number">9</span> col-md-<span class="number">9</span> col-md-pull-<span class="number">3</span>&quot;&gt;右侧的<span class="number">9</span>格，左移<span class="number">3</span>格&lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、响应式工具"><a href="#五、响应式工具" class="headerlink" title="五、响应式工具"></a>五、响应式工具</h2><p>通过单独或联合使用以下列出的类，可以针对不同屏幕尺寸隐藏或显示页面内容。</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">超小屏幕手机 (&lt;768px)</th>
+<th align="left">小屏幕平板 (≥768px)</th>
+<th align="left">中等屏幕桌面 (≥992px)</th>
+<th>大屏幕桌面 (≥1200px)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>.visible-xs-*</code></td>
+<td align="left"><strong>可见</strong></td>
+<td align="left">隐藏</td>
+<td align="left">隐藏</td>
+<td>隐藏</td>
+</tr>
+<tr>
+<td align="left"><code>.visible-sm-*</code></td>
+<td align="left">隐藏</td>
+<td align="left"><strong>可见</strong></td>
+<td align="left">隐藏</td>
+<td>隐藏</td>
+</tr>
+<tr>
+<td align="left"><code>.visible-md-*</code></td>
+<td align="left">隐藏</td>
+<td align="left">隐藏</td>
+<td align="left"><strong>可见</strong></td>
+<td>隐藏</td>
+</tr>
+<tr>
+<td align="left"><code>.visible-lg-*</code></td>
+<td align="left">隐藏</td>
+<td align="left">隐藏</td>
+<td align="left">隐藏</td>
+<td><strong>可见</strong></td>
+</tr>
+<tr>
+<td align="left"><code>.hidden-xs</code></td>
+<td align="left">隐藏</td>
+<td align="left"><strong>可见</strong></td>
+<td align="left"><strong>可见</strong></td>
+<td><strong>可见</strong></td>
+</tr>
+<tr>
+<td align="left"><code>.hidden-sm</code></td>
+<td align="left"><strong>可见</strong></td>
+<td align="left">隐藏</td>
+<td align="left"><strong>可见</strong></td>
+<td><strong>可见</strong></td>
+</tr>
+<tr>
+<td align="left"><code>.hidden-md</code></td>
+<td align="left"><strong>可见</strong></td>
+<td align="left"><strong>可见</strong></td>
+<td align="left">隐藏</td>
+<td><strong>可见</strong></td>
+</tr>
+<tr>
+<td align="left"><code>.hidden-lg</code></td>
+<td align="left"><strong>可见</strong></td>
+<td align="left"><strong>可见</strong></td>
+<td align="left"><strong>可见</strong></td>
+<td>隐藏</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>笔记</tag>
+        <tag>Bootstrap</tag>
+        <tag>响应式布局</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复合选择器笔记（思维导图）</title>
+    <url>/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3362048325.png"></p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>笔记</tag>
+        <tag>思维导图</tag>
+        <tag>复合选择器</tag>
+      </tags>
   </entry>
   <entry>
     <title></title>
@@ -1649,6 +1738,53 @@
 ]]></content>
   </entry>
   <entry>
+    <title>相邻块元素垂直外边距合并</title>
+    <url>/2021/11/28/%E7%9B%B8%E9%82%BB%E5%9D%97%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6/</url>
+    <content><![CDATA[<p><strong>清除元素的默认内外边距👇👇</strong></p>
+<ul>
+<li>行内元素为了照顾兼容性,尽量只设置左右内外边距，不要设置上下内外边距。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">padding</span>:<span class="number">0</span>;         <span class="comment">/* 清除内边距 */</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">0</span>;          <span class="comment">/* 清除外边距 */</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>使用margin定义块元素的<strong>「垂直外边距」</strong>时，可能会出现外边距的合并。</p>
+<h6 id="1-相邻块元素垂直外边距的合并"><a href="#1-相邻块元素垂直外边距的合并" class="headerlink" title="(1). 相邻块元素垂直外边距的合并"></a>(1). 相邻块元素垂直外边距的合并</h6><ul>
+<li>当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom</li>
+<li>下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和</li>
+<li><strong>「取两个值中的较大者」</strong>这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/y7EkeCWAzmqtcdL7HZYccBic0jicaWzR8b15wO9U7G1QHGZRB5OIsdJaCdPeg7MzVYtTsbhfGPusK7OCOwWtvs4A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><strong>「解决方案：尽量给只给一个盒子添加margin值」</strong>。</p>
+<h4 id="2-嵌套块元素垂直外边距的合并（塌陷）"><a href="#2-嵌套块元素垂直外边距的合并（塌陷）" class="headerlink" title="(2). 嵌套块元素垂直外边距的合并（塌陷）"></a>(2). 嵌套块元素垂直外边距的合并（塌陷）</h4><ul>
+<li>对于两个嵌套关系的块元素，如果父元素没有上内边距及边框</li>
+<li>父元素的上外边距会与子元素的上外边距发生合并</li>
+<li>合并后的外边距为两者中的较大者</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/y7EkeCWAzmqtcdL7HZYccBic0jicaWzR8by8DvQuDYlXKtzlIWtltPGPW0HtWAqoaWKr6cy6jYzc4hrVmR6CFlDA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><strong>「解决方案：」</strong></p>
+<ol>
+<li>可以为父元素定义上边框。</li>
+<li>可以为父元素定义上内边距</li>
+<li>可以为父元素添加overflow: hidden。</li>
+</ol>
+<p>还有其他方法，比如浮动、固定、绝对定位的盒子不会有问题，后面咱们再总结。。。</p>
+<h4 id="盒子模型布局稳定性"><a href="#盒子模型布局稳定性" class="headerlink" title="盒子模型布局稳定性"></a>盒子模型布局稳定性</h4><p>优先使用  宽度 （width）  其次 使用内边距（padding）   再次  外边距（margin）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">width &gt;  padding  &gt;   margin   </span><br></pre></td></tr></table></figure>
+
+<p><strong>原因：</strong></p>
+<ul>
+<li>margin 会有外边距合并 还有 ie6下面margin 加倍的bug（讨厌）所以最后使用。</li>
+<li>padding  会影响盒子大小， 需要进行加减计算（麻烦） 其次使用。</li>
+<li>width  没有问题（嗨皮）我们经常使用宽度剩余法 高度剩余法来做。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title></title>
     <url>/2021/11/28/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p>清除浮动的方法</p>
@@ -1743,131 +1879,36 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/11/28/%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/</url>
-    <content><![CDATA[<h1 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h1><h4 id="1-1-display-显示（重点）"><a href="#1-1-display-显示（重点）" class="headerlink" title="1.1 display 显示（重点）"></a>1.1 display 显示（重点）</h4><p>display设置或检索对象是否显示或如何显示。</p>
-<ul>
-<li><p>display: none 隐藏对象</p>
-</li>
-<li><ul>
-<li>特点：隐藏之后，**<code>不再保留位置。</code>**</li>
-</ul>
-</li>
-<li><p>display: block 除了转换为块级元素之外，同时还有显示元素的意思。</p>
-</li>
-</ul>
-<p><code>实际开发场景</code>：配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">&#125;</span><br><span class="line">当鼠标放到box上时候，则显示隐藏的<span class="attribute">mask</span>遮罩元素</span><br></pre></td></tr></table></figure>
+    <title>css背景设置</title>
+    <url>/2021/09/23/CSS%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="CSS背景选择"><a href="#CSS背景选择" class="headerlink" title="CSS背景选择"></a><strong>CSS背景选择</strong></h2><h5 id="一、background-color-颜色值-设置背景颜色，默认transparent-透明色"><a href="#一、background-color-颜色值-设置背景颜色，默认transparent-透明色" class="headerlink" title="一、background-color: 颜色值       设置背景颜色，默认transparent(透明色)"></a>一、<strong>background-color:</strong> 颜色值       设置背景颜色，默认transparent(透明色)</h5><h5 id="二、background-image：none-url-用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。"><a href="#二、background-image：none-url-用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。" class="headerlink" title="二、background-image：none/url()   用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。"></a>二、<strong>background-image：none/url()</strong>   用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。</h5><h5 id="三、background-repeat：图片平铺（默认平铺）"><a href="#三、background-repeat：图片平铺（默认平铺）" class="headerlink" title="三、background-repeat：图片平铺（默认平铺）"></a>三、<strong>background-repeat：</strong>图片平铺（默认平铺）</h5><p>​    = repeat-x | repeat-y |  [repeat | no-repeat | space | round]{1,2}</p>
+<p>​    repeat-x： 背景图像在横向上平铺 </p>
+<p>​    repeat-y： 背景图像在纵向上平铺 </p>
+<p>​    repeat： 背景图像在横向和纵向平铺 </p>
+<p>​    no-repeat： 背景图像不平铺 </p>
+<p>​    round： 背景图像自动缩放直到适应且填充满整个容器。（CSS3） </p>
+<p>​    space： 背景图像以相同的间距平铺且填充满整个容器或某个方向。（CSS3）</p>
+<h5 id="四、background-position：x-y-设置图片在背景中的位置，方位名词可以使用两个值-不分顺序-，例如center-top（尽量）-若第二个省略，则默认为居中。"><a href="#四、background-position：x-y-设置图片在背景中的位置，方位名词可以使用两个值-不分顺序-，例如center-top（尽量）-若第二个省略，则默认为居中。" class="headerlink" title="四、background-position：x  y;**    设置图片在背景中的位置，方位名词可以使用两个值(不分顺序)，例如center top（尽量）;若第二个省略，则默认为居中。"></a><strong>四、background-position：x  y</strong>;**    设置图片在背景中的位置，方位名词可以使用两个值(不分顺序)，例如center top（尽量）;若第二个省略，则默认为居中。</h5><h6 id="1、方位名词："><a href="#1、方位名词：" class="headerlink" title="1、方位名词："></a>1、方位名词：</h6><p>​        percentage： 用百分比指定背景图像填充的位置。可以为负值。其参考的尺寸        为容器大小减去背景图片大小 </p>
+<p>​        length： 用长度值指定背景图像填充的位置。可以为负值。 </p>
+<p>​        center： 背景图像横向和纵向居中。 </p>
+<p>​        left： 背景图像在横向上填充从左边开始。 </p>
+<p>​        right： 背景图像在横向上填充从右边开始。 </p>
+<p>​        top： 背景图像在纵向上填充从顶部开始。 </p>
+<p>​        bottom： 背景图像在纵向上填充从底部开始。 </p>
+<h6 id="2、精确单位"><a href="#2、精确单位" class="headerlink" title="2、精确单位"></a>2、精确单位</h6><p>​        x和y均为相对左上角的坐标。第一个数值一定为x坐标，第二个不填则默认垂        直居中</p>
+<h6 id="3、混合坐标，第一个也一定为x坐标方向的位置"><a href="#3、混合坐标，第一个也一定为x坐标方向的位置" class="headerlink" title="3、混合坐标，第一个也一定为x坐标方向的位置"></a>3、混合坐标，第一个也一定为x坐标方向的位置</h6><h5 id="五、background-attachment：；背景图像固定（背景附着，不随滚动）"><a href="#五、background-attachment：；背景图像固定（背景附着，不随滚动）" class="headerlink" title="五、background-attachment：；背景图像固定（背景附着，不随滚动）"></a><strong>五、background-attachment</strong>：；背景图像固定（背景附着，不随滚动）</h5><p>​    fixed： 背景图像相对于窗体固定，不随着滚动。 </p>
+<p>​    scroll： 背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟    着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起    滚动。 </p>
+<p>​    local： 背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像    也会跟着滚动，因为背景图像总是要跟着内容。（CSS3） </p>
+<h5 id="六、背景属性复合写法（之间用空格分开）"><a href="#六、背景属性复合写法（之间用空格分开）" class="headerlink" title="六、背景属性复合写法（之间用空格分开）"></a>六、背景属性复合写法（之间用空格分开）</h5><p>规范写法：</p>
+<p>​    background: 背景颜色  背景图片地址  背景平铺   背景图像滚动   背景图片位置</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: transparent <span class="built_in">url</span>() no-repeat fixed center top</span><br><span class="line">background:black <span class="built_in">url</span>(<span class="string">test1.jpg</span>) no-repeat scroll <span class="number">10px</span> <span class="number">20px</span> </span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="1-2-visibility-可见性"><a href="#1-2-visibility-可见性" class="headerlink" title="1.2 visibility 可见性"></a>1.2 visibility 可见性</h4><p>设置或检索是否显示对象</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visibility：visible ;  对象可视</span><br><span class="line"></span><br><span class="line">visibility：hidden;    对象隐藏</span><br></pre></td></tr></table></figure>
+<h5 id="七、背景色半透明（盒子里的内容不受影响）"><a href="#七、背景色半透明（盒子里的内容不受影响）" class="headerlink" title="七、背景色半透明（盒子里的内容不受影响）"></a><strong>七、背景色半透明（盒子里的内容不受影响）</strong></h5><p>最后一个参数为alpha透明度，取值范围0~1之间</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(red, green, blue, alpha);</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>特点：隐藏之后，<code>继续保留原有位置</code>。</li>
-</ul>
-<h4 id="1-3-overflow-溢出"><a href="#1-3-overflow-溢出" class="headerlink" title="1.3 overflow 溢出"></a>1.3 overflow 溢出</h4><p>检索或设置当对象的内容超过其指定高度及宽度时如何管理内容。</p>
-<table>
-<thead>
-<tr>
-<th align="left">属性值</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">visible</td>
-<td align="left">不剪切内容也不添加滚动条</td>
-</tr>
-<tr>
-<td align="left">hidden</td>
-<td align="left">不显示超过对象尺寸的内容，超出的部分隐藏掉</td>
-</tr>
-<tr>
-<td align="left">scroll</td>
-<td align="left">不管超出内容否，总是显示滚动条</td>
-</tr>
-<tr>
-<td align="left">auto</td>
-<td align="left">超出自动显示滚动条，不超出不显示滚动条</td>
-</tr>
-</tbody></table>
-<p><code>实际开发场景</code>：</p>
-<ol>
-<li>清除浮动</li>
-<li>隐藏超出内容，隐藏掉,  不允许内容超过父盒子。</li>
-</ol>
-<h4 id="1-4-显示与隐藏总结"><a href="#1-4-显示与隐藏总结" class="headerlink" title="1.4 显示与隐藏总结"></a>1.4 显示与隐藏总结</h4><table>
-<thead>
-<tr>
-<th align="left">属性</th>
-<th align="left">区别</th>
-<th align="left">用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">display</td>
-<td align="left">隐藏对象，<strong>不保留位置</strong></td>
-<td align="left">配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</td>
-</tr>
-<tr>
-<td align="left">visibility</td>
-<td align="left">隐藏对象，<strong>保留位置</strong></td>
-<td align="left">使用较少</td>
-</tr>
-<tr>
-<td align="left">overflow</td>
-<td align="left">只是隐藏超出大小的部分</td>
-<td align="left">1. 可以清除浮动 2. 保证盒子里面的内容不会超出该盒子范围</td>
-</tr>
-</tbody></table>
+<h3 id="CSS背景总结"><a href="#CSS背景总结" class="headerlink" title="CSS背景总结"></a><strong>CSS背景总结</strong></h3><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3992008468.png"></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>相邻块元素垂直外边距合并</title>
-    <url>/2021/11/28/%E7%9B%B8%E9%82%BB%E5%9D%97%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6/</url>
-    <content><![CDATA[<p><strong>清除元素的默认内外边距👇👇</strong></p>
-<ul>
-<li>行内元素为了照顾兼容性,尽量只设置左右内外边距，不要设置上下内外边距。</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">padding</span>:<span class="number">0</span>;         <span class="comment">/* 清除内边距 */</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">0</span>;          <span class="comment">/* 清除外边距 */</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<p>使用margin定义块元素的<strong>「垂直外边距」</strong>时，可能会出现外边距的合并。</p>
-<h6 id="1-相邻块元素垂直外边距的合并"><a href="#1-相邻块元素垂直外边距的合并" class="headerlink" title="(1). 相邻块元素垂直外边距的合并"></a>(1). 相邻块元素垂直外边距的合并</h6><ul>
-<li>当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom</li>
-<li>下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和</li>
-<li><strong>「取两个值中的较大者」</strong>这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷）。</li>
-</ul>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/y7EkeCWAzmqtcdL7HZYccBic0jicaWzR8b15wO9U7G1QHGZRB5OIsdJaCdPeg7MzVYtTsbhfGPusK7OCOwWtvs4A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
-<p><strong>「解决方案：尽量给只给一个盒子添加margin值」</strong>。</p>
-<h4 id="2-嵌套块元素垂直外边距的合并（塌陷）"><a href="#2-嵌套块元素垂直外边距的合并（塌陷）" class="headerlink" title="(2). 嵌套块元素垂直外边距的合并（塌陷）"></a>(2). 嵌套块元素垂直外边距的合并（塌陷）</h4><ul>
-<li>对于两个嵌套关系的块元素，如果父元素没有上内边距及边框</li>
-<li>父元素的上外边距会与子元素的上外边距发生合并</li>
-<li>合并后的外边距为两者中的较大者</li>
-</ul>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/y7EkeCWAzmqtcdL7HZYccBic0jicaWzR8by8DvQuDYlXKtzlIWtltPGPW0HtWAqoaWKr6cy6jYzc4hrVmR6CFlDA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
-<p><strong>「解决方案：」</strong></p>
-<ol>
-<li>可以为父元素定义上边框。</li>
-<li>可以为父元素定义上内边距</li>
-<li>可以为父元素添加overflow: hidden。</li>
-</ol>
-<p>还有其他方法，比如浮动、固定、绝对定位的盒子不会有问题，后面咱们再总结。。。</p>
-<h4 id="盒子模型布局稳定性"><a href="#盒子模型布局稳定性" class="headerlink" title="盒子模型布局稳定性"></a>盒子模型布局稳定性</h4><p>优先使用  宽度 （width）  其次 使用内边距（padding）   再次  外边距（margin）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">width &gt;  padding  &gt;   margin   </span><br></pre></td></tr></table></figure>
-
-<p><strong>原因：</strong></p>
-<ul>
-<li>margin 会有外边距合并 还有 ie6下面margin 加倍的bug（讨厌）所以最后使用。</li>
-<li>padding  会影响盒子大小， 需要进行加减计算（麻烦） 其次使用。</li>
-<li>width  没有问题（嗨皮）我们经常使用宽度剩余法 高度剩余法来做。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>笔记</tag>
-      </tags>
   </entry>
 </search>
