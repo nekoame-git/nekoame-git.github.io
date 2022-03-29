@@ -137,39 +137,6 @@
       </tags>
   </entry>
   <entry>
-    <title>css背景设置</title>
-    <url>/2021/09/23/CSS%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="CSS背景选择"><a href="#CSS背景选择" class="headerlink" title="CSS背景选择"></a><strong>CSS背景选择</strong></h2><h5 id="一、background-color-颜色值-设置背景颜色，默认transparent-透明色"><a href="#一、background-color-颜色值-设置背景颜色，默认transparent-透明色" class="headerlink" title="一、background-color: 颜色值       设置背景颜色，默认transparent(透明色)"></a>一、<strong>background-color:</strong> 颜色值       设置背景颜色，默认transparent(透明色)</h5><h5 id="二、background-image：none-url-用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。"><a href="#二、background-image：none-url-用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。" class="headerlink" title="二、background-image：none/url()   用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。"></a>二、<strong>background-image：none/url()</strong>   用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。</h5><h5 id="三、background-repeat：图片平铺（默认平铺）"><a href="#三、background-repeat：图片平铺（默认平铺）" class="headerlink" title="三、background-repeat：图片平铺（默认平铺）"></a>三、<strong>background-repeat：</strong>图片平铺（默认平铺）</h5><p>​    = repeat-x | repeat-y |  [repeat | no-repeat | space | round]{1,2}</p>
-<p>​    repeat-x： 背景图像在横向上平铺 </p>
-<p>​    repeat-y： 背景图像在纵向上平铺 </p>
-<p>​    repeat： 背景图像在横向和纵向平铺 </p>
-<p>​    no-repeat： 背景图像不平铺 </p>
-<p>​    round： 背景图像自动缩放直到适应且填充满整个容器。（CSS3） </p>
-<p>​    space： 背景图像以相同的间距平铺且填充满整个容器或某个方向。（CSS3）</p>
-<h5 id="四、background-position：x-y-设置图片在背景中的位置，方位名词可以使用两个值-不分顺序-，例如center-top（尽量）-若第二个省略，则默认为居中。"><a href="#四、background-position：x-y-设置图片在背景中的位置，方位名词可以使用两个值-不分顺序-，例如center-top（尽量）-若第二个省略，则默认为居中。" class="headerlink" title="四、background-position：x  y;**    设置图片在背景中的位置，方位名词可以使用两个值(不分顺序)，例如center top（尽量）;若第二个省略，则默认为居中。"></a><strong>四、background-position：x  y</strong>;**    设置图片在背景中的位置，方位名词可以使用两个值(不分顺序)，例如center top（尽量）;若第二个省略，则默认为居中。</h5><h6 id="1、方位名词："><a href="#1、方位名词：" class="headerlink" title="1、方位名词："></a>1、方位名词：</h6><p>​        percentage： 用百分比指定背景图像填充的位置。可以为负值。其参考的尺寸        为容器大小减去背景图片大小 </p>
-<p>​        length： 用长度值指定背景图像填充的位置。可以为负值。 </p>
-<p>​        center： 背景图像横向和纵向居中。 </p>
-<p>​        left： 背景图像在横向上填充从左边开始。 </p>
-<p>​        right： 背景图像在横向上填充从右边开始。 </p>
-<p>​        top： 背景图像在纵向上填充从顶部开始。 </p>
-<p>​        bottom： 背景图像在纵向上填充从底部开始。 </p>
-<h6 id="2、精确单位"><a href="#2、精确单位" class="headerlink" title="2、精确单位"></a>2、精确单位</h6><p>​        x和y均为相对左上角的坐标。第一个数值一定为x坐标，第二个不填则默认垂        直居中</p>
-<h6 id="3、混合坐标，第一个也一定为x坐标方向的位置"><a href="#3、混合坐标，第一个也一定为x坐标方向的位置" class="headerlink" title="3、混合坐标，第一个也一定为x坐标方向的位置"></a>3、混合坐标，第一个也一定为x坐标方向的位置</h6><h5 id="五、background-attachment：；背景图像固定（背景附着，不随滚动）"><a href="#五、background-attachment：；背景图像固定（背景附着，不随滚动）" class="headerlink" title="五、background-attachment：；背景图像固定（背景附着，不随滚动）"></a><strong>五、background-attachment</strong>：；背景图像固定（背景附着，不随滚动）</h5><p>​    fixed： 背景图像相对于窗体固定，不随着滚动。 </p>
-<p>​    scroll： 背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟    着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起    滚动。 </p>
-<p>​    local： 背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像    也会跟着滚动，因为背景图像总是要跟着内容。（CSS3） </p>
-<h5 id="六、背景属性复合写法（之间用空格分开）"><a href="#六、背景属性复合写法（之间用空格分开）" class="headerlink" title="六、背景属性复合写法（之间用空格分开）"></a>六、背景属性复合写法（之间用空格分开）</h5><p>规范写法：</p>
-<p>​    background: 背景颜色  背景图片地址  背景平铺   背景图像滚动   背景图片位置</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: transparent <span class="built_in">url</span>() no-repeat fixed center top</span><br><span class="line">background:black <span class="built_in">url</span>(<span class="string">test1.jpg</span>) no-repeat scroll <span class="number">10px</span> <span class="number">20px</span> </span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="七、背景色半透明（盒子里的内容不受影响）"><a href="#七、背景色半透明（盒子里的内容不受影响）" class="headerlink" title="七、背景色半透明（盒子里的内容不受影响）"></a><strong>七、背景色半透明（盒子里的内容不受影响）</strong></h5><p>最后一个参数为alpha透明度，取值范围0~1之间</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(red, green, blue, alpha);</span><br></pre></td></tr></table></figure>
-
-<h3 id="CSS背景总结"><a href="#CSS背景总结" class="headerlink" title="CSS背景总结"></a><strong>CSS背景总结</strong></h3><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3992008468.png"></p>
-]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/2021/11/28/CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<h1 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h1><h2 id="一、层叠性"><a href="#一、层叠性" class="headerlink" title="一、层叠性"></a>一、层叠性</h2><p>​    样式冲突，遵循就近原则，执行样式离结构近的</p>
@@ -228,6 +195,71 @@
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">    &lt;style&gt;</span><br><span class="line">        <span class="comment">/* .nav li  权重是 11 */</span></span><br><span class="line">        <span class="selector-class">.nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: red;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* 需求把第一个小li 颜色改为 粉色加粗 ? */</span></span><br><span class="line">        <span class="comment">/* .pink  权重是 10  */</span></span><br><span class="line">       <span class="selector-class">.nav</span> &#123;</span><br><span class="line">            <span class="attribute">color</span>: pink;</span><br><span class="line">            <span class="attribute">font-weight</span>: <span class="number">700</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">body</span>&gt;  </span><br><span class="line">    &lt;<span class="selector-tag">ul</span> class=&quot;<span class="selector-tag">nav</span>&quot;&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span> class=&quot;pink&quot;&gt;人生四大悲&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;家里没宽带&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;网速不够快&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;手机没流量&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">li</span>&gt;学校没wifi&lt;/<span class="selector-tag">li</span>&gt;</span><br><span class="line">    &lt;/<span class="selector-tag">ul</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">body</span>&gt;</span><br></pre></td></tr></table></figure>
 
 <p><strong>这里.nav未产生继承，因为.nav后面加了li，所以直接选择了li元素，所以.nav算为类的权重</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Emmet语法学习</title>
+    <url>/2021/09/21/Emmet%E8%AF%AD%E6%B3%95%EF%BC%88vscode%E8%87%AA%E5%B8%A6%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="Emmet语法（vscode自带）"><a href="#Emmet语法（vscode自带）" class="headerlink" title="Emmet语法（vscode自带）"></a>Emmet语法（vscode自带）</h1><h2 id="一、快速生成HTML结构语法"><a href="#一、快速生成HTML结构语法" class="headerlink" title="一、快速生成HTML结构语法"></a>一、快速生成HTML结构语法</h2><p>1、生成标签，输入div 按tab键，快速生成标签</p>
+<p>2、div*5 生成5个div标签</p>
+<p>3、父子级关系标签用&gt; ，    如ul&gt;li</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>4、兄弟（并列）关系用+，如div+p</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>5、生成带类名和id的标签直接写id（默认div标签）如.demo或#demo    </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">.id </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">#demo</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">p.demo	指定标签则前面加上限制标签即可</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">ul&gt;li.demo</span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>6、使用$自增符号，生成多个有顺序的类名</p>
+<p>（应该是把$符号变为对应数字</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">p.demo$*5</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>7、用{}中输入，指定标签中的文本内容</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">div&#123;text&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">div&#123;text$&#125;*5</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、快速生成CSS结构语法"><a href="#二、快速生成CSS结构语法" class="headerlink" title="二、快速生成CSS结构语法"></a>二、快速生成CSS结构语法</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">输入tac补全成<span class="attribute">text-align</span>: center;</span><br><span class="line">输入ti补全成<span class="attribute">text-indent</span>: ;</span><br><span class="line">输入w100补全成<span class="attribute">width</span>: <span class="number">100px</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>笔记</tag>
+        <tag>Emmet语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css背景设置</title>
+    <url>/2021/09/23/CSS%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="CSS背景选择"><a href="#CSS背景选择" class="headerlink" title="CSS背景选择"></a><strong>CSS背景选择</strong></h2><h5 id="一、background-color-颜色值-设置背景颜色，默认transparent-透明色"><a href="#一、background-color-颜色值-设置背景颜色，默认transparent-透明色" class="headerlink" title="一、background-color: 颜色值       设置背景颜色，默认transparent(透明色)"></a>一、<strong>background-color:</strong> 颜色值       设置背景颜色，默认transparent(透明色)</h5><h5 id="二、background-image：none-url-用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。"><a href="#二、background-image：none-url-用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。" class="headerlink" title="二、background-image：none/url()   用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。"></a>二、<strong>background-image：none/url()</strong>   用于添加背景图片（例如超大的背景界面），比直接插入图片更加容易控制位置。</h5><h5 id="三、background-repeat：图片平铺（默认平铺）"><a href="#三、background-repeat：图片平铺（默认平铺）" class="headerlink" title="三、background-repeat：图片平铺（默认平铺）"></a>三、<strong>background-repeat：</strong>图片平铺（默认平铺）</h5><p>​    = repeat-x | repeat-y |  [repeat | no-repeat | space | round]{1,2}</p>
+<p>​    repeat-x： 背景图像在横向上平铺 </p>
+<p>​    repeat-y： 背景图像在纵向上平铺 </p>
+<p>​    repeat： 背景图像在横向和纵向平铺 </p>
+<p>​    no-repeat： 背景图像不平铺 </p>
+<p>​    round： 背景图像自动缩放直到适应且填充满整个容器。（CSS3） </p>
+<p>​    space： 背景图像以相同的间距平铺且填充满整个容器或某个方向。（CSS3）</p>
+<h5 id="四、background-position：x-y-设置图片在背景中的位置，方位名词可以使用两个值-不分顺序-，例如center-top（尽量）-若第二个省略，则默认为居中。"><a href="#四、background-position：x-y-设置图片在背景中的位置，方位名词可以使用两个值-不分顺序-，例如center-top（尽量）-若第二个省略，则默认为居中。" class="headerlink" title="四、background-position：x  y;**    设置图片在背景中的位置，方位名词可以使用两个值(不分顺序)，例如center top（尽量）;若第二个省略，则默认为居中。"></a><strong>四、background-position：x  y</strong>;**    设置图片在背景中的位置，方位名词可以使用两个值(不分顺序)，例如center top（尽量）;若第二个省略，则默认为居中。</h5><h6 id="1、方位名词："><a href="#1、方位名词：" class="headerlink" title="1、方位名词："></a>1、方位名词：</h6><p>​        percentage： 用百分比指定背景图像填充的位置。可以为负值。其参考的尺寸        为容器大小减去背景图片大小 </p>
+<p>​        length： 用长度值指定背景图像填充的位置。可以为负值。 </p>
+<p>​        center： 背景图像横向和纵向居中。 </p>
+<p>​        left： 背景图像在横向上填充从左边开始。 </p>
+<p>​        right： 背景图像在横向上填充从右边开始。 </p>
+<p>​        top： 背景图像在纵向上填充从顶部开始。 </p>
+<p>​        bottom： 背景图像在纵向上填充从底部开始。 </p>
+<h6 id="2、精确单位"><a href="#2、精确单位" class="headerlink" title="2、精确单位"></a>2、精确单位</h6><p>​        x和y均为相对左上角的坐标。第一个数值一定为x坐标，第二个不填则默认垂        直居中</p>
+<h6 id="3、混合坐标，第一个也一定为x坐标方向的位置"><a href="#3、混合坐标，第一个也一定为x坐标方向的位置" class="headerlink" title="3、混合坐标，第一个也一定为x坐标方向的位置"></a>3、混合坐标，第一个也一定为x坐标方向的位置</h6><h5 id="五、background-attachment：；背景图像固定（背景附着，不随滚动）"><a href="#五、background-attachment：；背景图像固定（背景附着，不随滚动）" class="headerlink" title="五、background-attachment：；背景图像固定（背景附着，不随滚动）"></a><strong>五、background-attachment</strong>：；背景图像固定（背景附着，不随滚动）</h5><p>​    fixed： 背景图像相对于窗体固定，不随着滚动。 </p>
+<p>​    scroll： 背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟    着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起    滚动。 </p>
+<p>​    local： 背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像    也会跟着滚动，因为背景图像总是要跟着内容。（CSS3） </p>
+<h5 id="六、背景属性复合写法（之间用空格分开）"><a href="#六、背景属性复合写法（之间用空格分开）" class="headerlink" title="六、背景属性复合写法（之间用空格分开）"></a>六、背景属性复合写法（之间用空格分开）</h5><p>规范写法：</p>
+<p>​    background: 背景颜色  背景图片地址  背景平铺   背景图像滚动   背景图片位置</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: transparent <span class="built_in">url</span>() no-repeat fixed center top</span><br><span class="line">background:black <span class="built_in">url</span>(<span class="string">test1.jpg</span>) no-repeat scroll <span class="number">10px</span> <span class="number">20px</span> </span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="七、背景色半透明（盒子里的内容不受影响）"><a href="#七、背景色半透明（盒子里的内容不受影响）" class="headerlink" title="七、背景色半透明（盒子里的内容不受影响）"></a><strong>七、背景色半透明（盒子里的内容不受影响）</strong></h5><p>最后一个参数为alpha透明度，取值范围0~1之间</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(red, green, blue, alpha);</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS背景总结"><a href="#CSS背景总结" class="headerlink" title="CSS背景总结"></a><strong>CSS背景总结</strong></h3><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3992008468.png"></p>
 ]]></content>
   </entry>
   <entry>
@@ -348,41 +380,28 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Emmet语法学习</title>
-    <url>/2021/09/21/Emmet%E8%AF%AD%E6%B3%95%EF%BC%88vscode%E8%87%AA%E5%B8%A6%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="Emmet语法（vscode自带）"><a href="#Emmet语法（vscode自带）" class="headerlink" title="Emmet语法（vscode自带）"></a>Emmet语法（vscode自带）</h1><h2 id="一、快速生成HTML结构语法"><a href="#一、快速生成HTML结构语法" class="headerlink" title="一、快速生成HTML结构语法"></a>一、快速生成HTML结构语法</h2><p>1、生成标签，输入div 按tab键，快速生成标签</p>
-<p>2、div*5 生成5个div标签</p>
-<p>3、父子级关系标签用&gt; ，    如ul&gt;li</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>Hello World</title>
+    <url>/2021/11/28/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>4、兄弟（并列）关系用+，如div+p</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>5、生成带类名和id的标签直接写id（默认div标签）如.demo或#demo    </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">.id </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">#demo</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">p.demo	指定标签则前面加上限制标签即可</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">ul&gt;li.demo</span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;demo&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>6、使用$自增符号，生成多个有顺序的类名</p>
-<p>（应该是把$符号变为对应数字</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">p.demo$*5</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;demo5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>7、用{}中输入，指定标签中的文本内容</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">div&#123;text&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">div&#123;text$&#125;*5</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>text5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="二、快速生成CSS结构语法"><a href="#二、快速生成CSS结构语法" class="headerlink" title="二、快速生成CSS结构语法"></a>二、快速生成CSS结构语法</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">输入tac补全成<span class="attribute">text-align</span>: center;</span><br><span class="line">输入ti补全成<span class="attribute">text-indent</span>: ;</span><br><span class="line">输入w100补全成<span class="attribute">width</span>: <span class="number">100px</span>;</span><br></pre></td></tr></table></figure>
-
-
-
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>笔记</tag>
-        <tag>Emmet语法</tag>
-      </tags>
   </entry>
   <entry>
     <title>git学习笔记</title>
     <url>/2022/03/28/git%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h2 id="1、配置用户名和邮箱"><a href="#1、配置用户名和邮箱" class="headerlink" title="1、配置用户名和邮箱"></a>1、配置用户名和邮箱</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">配置用户名和邮箱</span><br><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;</span><br><span class="line">	PS:以上信息在本地仓库中仅仅记录信息，不需要真实存在</span><br><span class="line">查看配置信息</span><br><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>1、配置用户名和邮箱</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">配置用户名和邮箱</span><br><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;</span><br><span class="line">	PS:以上信息在本地仓库中仅仅记录信息，不需要真实存在</span><br><span class="line">查看配置信息</span><br><span class="line">git config --global user.name</span><br><span class="line">git config --global user.email</span><br></pre></td></tr></table></figure>
 
 <h3 id="2、获取本地仓库"><a href="#2、获取本地仓库" class="headerlink" title="2、获取本地仓库"></a>2、获取本地仓库</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init 初始化当前的目录为一个git仓库（该本地仓库仅存在当前目录！！！）</span><br><span class="line">ll -a	初始化后当前目录会多一个.git文件夹，-a可以显示隐藏文件</span><br></pre></td></tr></table></figure>
 
@@ -417,50 +436,20 @@
 <li><p>我们还可以直接切换到一个不存在的分支（创建并切换）</p>
 <p><strong>命令：git checkout -b 分支名</strong></p>
 </li>
-<li><p>合并分支(merge)</p>
-<p>一个分支上的提交可以合并到另一个分支</p>
-<p>命令：git merge 分支名称</p>
-</li>
 <li><p>删除分支</p>
 <p><strong>不能删除当前分支，只能删除其他分支</strong></p>
 <p>git branch -d b1 删除分支时，需要做各种检查</p>
 <p>git branch -D b1 不做任何检查，强制删除</p>
-</li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[yinwei@centos git_learn]$ git branch -d dev01</span><br><span class="line">Deleted branch dev01 (was f6f7583).</span><br><span class="line">[yinwei@centos git_learn]$ git log --pretty=oneline --abbrev-commit --graph --decorate --all</span><br><span class="line">*   927fbb9 (HEAD, master, dev) Merge branch &#x27;dev01&#x27;</span><br><span class="line">|\  </span><br><span class="line">| * f6f7583 add file02</span><br><span class="line">* | 316fa80 add gitignore</span><br><span class="line">* | 4b611fc update file01</span><br><span class="line">|/  </span><br><span class="line">* b5c5a80 add file01</span><br></pre></td></tr></table></figure></li>
+<li><p>合并分支(merge)</p>
+<p>一个分支上的提交可以合并到另一个分支</p>
+<p>命令：git merge 分支名称</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">解决合并冲突:</span><br><span class="line">当在两个分支中同时修改了同一个文件的同一行时(不是同一行时会自动合并)，合并时会产生冲突</span><br><span class="line">[yinwei@centos git_learn]$ git merge dev</span><br><span class="line">Auto-merging file01.txt</span><br><span class="line">CONFLICT (content): Merge conflict in file01.txt</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br><span class="line">然后打开file01.txt中会显示两个不同分支修改的后合并产生的冲突点</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">updata 1 count=1</span><br><span class="line">=======</span><br><span class="line">updata 1 count=2</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev</span><br><span class="line"></span><br><span class="line">排除冲突后，再次add 和commit</span><br><span class="line">[yinwei@centos git_learn]$ git add .</span><br><span class="line">[yinwei@centos git_learn]$ git commit</span><br><span class="line">[master a54af4e] Merge branch &#x27;dev&#x27;</span><br><span class="line">[yinwei@centos git_learn]$ git log --pretty=oneline --abbrev-commit --graph --decorate --all</span><br><span class="line">*   a54af4e (HEAD, master) Merge branch &#x27;dev&#x27;</span><br><span class="line">|\  </span><br><span class="line">| * f419933 (dev) file01 add count=2</span><br><span class="line">* | 0b3211f file01 add count=1</span><br><span class="line">|/  </span><br><span class="line">*   927fbb9 Merge branch &#x27;dev01&#x27;</span><br><span class="line">|\  </span><br><span class="line">| * f6f7583 add file02</span><br><span class="line">* | 316fa80 add gitignore</span><br><span class="line">* | 4b611fc update file01</span><br><span class="line">|/  </span><br><span class="line">* b5c5a80 add file01</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
       <tags>
         <tag>前端</tag>
         <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/11/28/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>元素显示模式笔记（思维导图）</title>
-    <url>/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/1802855579.png"></p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-        <tag>笔记</tag>
-        <tag>元素显示模式</tag>
-        <tag>思维导图</tag>
       </tags>
   </entry>
   <entry>
@@ -1294,87 +1283,6 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2021/11/28/%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/</url>
-    <content><![CDATA[<h1 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h1><h4 id="1-1-display-显示（重点）"><a href="#1-1-display-显示（重点）" class="headerlink" title="1.1 display 显示（重点）"></a>1.1 display 显示（重点）</h4><p>display设置或检索对象是否显示或如何显示。</p>
-<ul>
-<li><p>display: none 隐藏对象</p>
-</li>
-<li><ul>
-<li>特点：隐藏之后，**<code>不再保留位置。</code>**</li>
-</ul>
-</li>
-<li><p>display: block 除了转换为块级元素之外，同时还有显示元素的意思。</p>
-</li>
-</ul>
-<p><code>实际开发场景</code>：配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">&#125;</span><br><span class="line">当鼠标放到box上时候，则显示隐藏的<span class="attribute">mask</span>遮罩元素</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="1-2-visibility-可见性"><a href="#1-2-visibility-可见性" class="headerlink" title="1.2 visibility 可见性"></a>1.2 visibility 可见性</h4><p>设置或检索是否显示对象</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visibility：visible ;  对象可视</span><br><span class="line"></span><br><span class="line">visibility：hidden;    对象隐藏</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>特点：隐藏之后，<code>继续保留原有位置</code>。</li>
-</ul>
-<h4 id="1-3-overflow-溢出"><a href="#1-3-overflow-溢出" class="headerlink" title="1.3 overflow 溢出"></a>1.3 overflow 溢出</h4><p>检索或设置当对象的内容超过其指定高度及宽度时如何管理内容。</p>
-<table>
-<thead>
-<tr>
-<th align="left">属性值</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">visible</td>
-<td align="left">不剪切内容也不添加滚动条</td>
-</tr>
-<tr>
-<td align="left">hidden</td>
-<td align="left">不显示超过对象尺寸的内容，超出的部分隐藏掉</td>
-</tr>
-<tr>
-<td align="left">scroll</td>
-<td align="left">不管超出内容否，总是显示滚动条</td>
-</tr>
-<tr>
-<td align="left">auto</td>
-<td align="left">超出自动显示滚动条，不超出不显示滚动条</td>
-</tr>
-</tbody></table>
-<p><code>实际开发场景</code>：</p>
-<ol>
-<li>清除浮动</li>
-<li>隐藏超出内容，隐藏掉,  不允许内容超过父盒子。</li>
-</ol>
-<h4 id="1-4-显示与隐藏总结"><a href="#1-4-显示与隐藏总结" class="headerlink" title="1.4 显示与隐藏总结"></a>1.4 显示与隐藏总结</h4><table>
-<thead>
-<tr>
-<th align="left">属性</th>
-<th align="left">区别</th>
-<th align="left">用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">display</td>
-<td align="left">隐藏对象，<strong>不保留位置</strong></td>
-<td align="left">配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</td>
-</tr>
-<tr>
-<td align="left">visibility</td>
-<td align="left">隐藏对象，<strong>保留位置</strong></td>
-<td align="left">使用较少</td>
-</tr>
-<tr>
-<td align="left">overflow</td>
-<td align="left">只是隐藏超出大小的部分</td>
-<td align="left">1. 可以清除浮动 2. 保证盒子里面的内容不会超出该盒子范围</td>
-</tr>
-</tbody></table>
-]]></content>
-  </entry>
-  <entry>
     <title>复合选择器笔记（思维导图）</title>
     <url>/2021/09/22/%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8/</url>
     <content><![CDATA[<h1 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/3362048325.png"></p>
@@ -1382,8 +1290,20 @@
       <tags>
         <tag>前端</tag>
         <tag>笔记</tag>
-        <tag>思维导图</tag>
         <tag>复合选择器</tag>
+        <tag>思维导图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>元素显示模式笔记（思维导图）</title>
+    <url>/2021/09/22/%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h1><p><img src="http://blog.nekoame.club/usr/uploads/2021/09/1802855579.png"></p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+        <tag>笔记</tag>
+        <tag>思维导图</tag>
+        <tag>元素显示模式</tag>
       </tags>
   </entry>
   <entry>
@@ -1818,6 +1738,87 @@
 <td align="left">父级双伪元素</td>
 <td align="left">结构语义化正确</td>
 <td align="left">由于IE6-7不支持:after，兼容性问题</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/11/28/%E5%85%83%E7%B4%A0%E7%9A%84%E6%98%BE%E7%A4%BA%E4%B8%8E%E9%9A%90%E8%97%8F/</url>
+    <content><![CDATA[<h1 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h1><h4 id="1-1-display-显示（重点）"><a href="#1-1-display-显示（重点）" class="headerlink" title="1.1 display 显示（重点）"></a>1.1 display 显示（重点）</h4><p>display设置或检索对象是否显示或如何显示。</p>
+<ul>
+<li><p>display: none 隐藏对象</p>
+</li>
+<li><ul>
+<li>特点：隐藏之后，**<code>不再保留位置。</code>**</li>
+</ul>
+</li>
+<li><p>display: block 除了转换为块级元素之外，同时还有显示元素的意思。</p>
+</li>
+</ul>
+<p><code>实际开发场景</code>：配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">&#125;</span><br><span class="line">当鼠标放到box上时候，则显示隐藏的<span class="attribute">mask</span>遮罩元素</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-2-visibility-可见性"><a href="#1-2-visibility-可见性" class="headerlink" title="1.2 visibility 可见性"></a>1.2 visibility 可见性</h4><p>设置或检索是否显示对象</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">visibility：visible ;  对象可视</span><br><span class="line"></span><br><span class="line">visibility：hidden;    对象隐藏</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>特点：隐藏之后，<code>继续保留原有位置</code>。</li>
+</ul>
+<h4 id="1-3-overflow-溢出"><a href="#1-3-overflow-溢出" class="headerlink" title="1.3 overflow 溢出"></a>1.3 overflow 溢出</h4><p>检索或设置当对象的内容超过其指定高度及宽度时如何管理内容。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">visible</td>
+<td align="left">不剪切内容也不添加滚动条</td>
+</tr>
+<tr>
+<td align="left">hidden</td>
+<td align="left">不显示超过对象尺寸的内容，超出的部分隐藏掉</td>
+</tr>
+<tr>
+<td align="left">scroll</td>
+<td align="left">不管超出内容否，总是显示滚动条</td>
+</tr>
+<tr>
+<td align="left">auto</td>
+<td align="left">超出自动显示滚动条，不超出不显示滚动条</td>
+</tr>
+</tbody></table>
+<p><code>实际开发场景</code>：</p>
+<ol>
+<li>清除浮动</li>
+<li>隐藏超出内容，隐藏掉,  不允许内容超过父盒子。</li>
+</ol>
+<h4 id="1-4-显示与隐藏总结"><a href="#1-4-显示与隐藏总结" class="headerlink" title="1.4 显示与隐藏总结"></a>1.4 显示与隐藏总结</h4><table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">区别</th>
+<th align="left">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">display</td>
+<td align="left">隐藏对象，<strong>不保留位置</strong></td>
+<td align="left">配合后面js做特效，比如下拉菜单，原先没有，鼠标经过，显示下拉菜单， 应用极为广泛</td>
+</tr>
+<tr>
+<td align="left">visibility</td>
+<td align="left">隐藏对象，<strong>保留位置</strong></td>
+<td align="left">使用较少</td>
+</tr>
+<tr>
+<td align="left">overflow</td>
+<td align="left">只是隐藏超出大小的部分</td>
+<td align="left">1. 可以清除浮动 2. 保证盒子里面的内容不会超出该盒子范围</td>
 </tr>
 </tbody></table>
 ]]></content>
